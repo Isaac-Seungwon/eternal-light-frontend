@@ -1,0 +1,17 @@
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); */
+    gap: 4px;
+}
+
+.calendar-wrapper {
+    display: flex;
+    justify-content: center;
+}

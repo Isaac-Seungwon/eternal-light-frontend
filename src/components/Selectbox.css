@@ -1,0 +1,52 @@
+.select-box {
+    position: relative;
+    cursor: pointer;
+    width: 300px;
+}
+
+.select-box-selected {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    width: 120px;
+}
+
+.select-box-dropdown {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: scroll;
+    z-index: 10;
+    width: 140px;
+    scrollbar-width: none;
+    /* scrollbar-color: #888 #f0f0f0; */
+}
+
+.select-box-option {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.select-box-option.selected {
+    background-color: #e0e0e0;
+}
+
+.select-box-option:hover {
+    background-color: #f0f0f0;
+}
+
+.selected-years {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.year-hashtag {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}

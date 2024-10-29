@@ -1,0 +1,14 @@
+.month {
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+}
+
+.month h2 {
+    text-align: center;
+}
+
+.week {
+    display: flex;
+    margin-bottom: 4px;
+    gap: 4px;
+}

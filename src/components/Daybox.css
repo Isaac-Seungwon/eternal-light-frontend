@@ -1,0 +1,20 @@
+.day-box {
+    width: 20px;
+    height: 20px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    border-radius: 5px;
+    border: 3px solid transparent;
+    box-sizing: border-box;
+}
+
+.day-box.filled {
+    border-color: #7679c7;
+}
+
+.empty-day-box {
+    width: 20px;
+    height: 20px;
+    visibility: hidden;
+}

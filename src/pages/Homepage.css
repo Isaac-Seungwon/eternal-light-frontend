@@ -1,0 +1,30 @@
+/* Homepage.css */
+.homepage {
+    display: flex;
+    flex-direction: row;
+    /* height: 100vh; */
+    overflow: hidden;
+}
+
+.section-1 {
+    width: 20%;
+    padding: 10px;
+    /* background-color: #f0f0f0; */
+}
+
+.section-2 {
+    width: 60%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* overflow-y: auto; */
+    height: auto;
+    min-height: calc(100vh - 20px);
+    min-width: 400px;
+}
+
+.section-3 {
+    width: 20%;
+    padding: 10px;
+    /* background-color: #f0f0f0; */
+}
