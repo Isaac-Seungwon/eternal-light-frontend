@@ -1,5 +1,5 @@
 // Modal.jsx
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './Modal.css';
 
 const Modal = ({ children, onClose }) => {
