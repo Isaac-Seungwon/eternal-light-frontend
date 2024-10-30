@@ -1,3 +1,4 @@
+// Month.jsx
 import React from 'react';
 import Daybox from './Daybox';
 import './Month.css';

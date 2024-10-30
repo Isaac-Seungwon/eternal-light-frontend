@@ -1,3 +1,4 @@
+/* Daybox.jsx */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -7,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    pointer-events: none; /* 배경 클릭 가능하게 설정 */
+    pointer-events: none;
 }
 
 .modal {
@@ -19,7 +20,7 @@
     width: 350px;
     height: 400px;
     overflow: hidden;
-    pointer-events: auto; /* 모달만 클릭 가능하게 설정 */
+    pointer-events: auto;
     transition: height 0.3s ease, width 0.3s ease;
 }
 
@@ -29,7 +30,7 @@
     align-items: center;
     padding: 8px;
     background-color: #f0f0f0;
-    border-bottom: 1px solid #ccc;
+     border-bottom: 1px solid #ccc;
     cursor: move;
     border-radius: 12px 12px 0 0;
 }

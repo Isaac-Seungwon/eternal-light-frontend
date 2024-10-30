@@ -1,3 +1,4 @@
+// Daybox.jsx
 import React from 'react';
 import './Daybox.css';
 

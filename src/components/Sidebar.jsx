@@ -1,3 +1,4 @@
+// Sidebar.jsx
 import React from 'react';
 import './Sidebar.css';
 
