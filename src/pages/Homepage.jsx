@@ -53,7 +53,7 @@ const Homepage = () => {
             // 선택된 날짜가 없을 경우 새로운 이벤트 추가
             if (!selectedDates.includes(selectedDateString)) {
                 const newEvent = {
-                    title: `Event for ${selectedDateString}`,
+                    title: `Sample title`,
                     description: 'Sample description',
                     details: 'Sample details',
                     date: selectedDateString,

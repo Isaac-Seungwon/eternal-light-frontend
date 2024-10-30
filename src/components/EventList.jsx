@@ -1,28 +1,39 @@
 // EventList.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import './EventList.css';
 
 const EventList = ({ events }) => {
+    const [expandedIndex, setExpandedIndex] = useState(null); // 확장된 이벤트의 인덱스 상태
+
+    const toggleDetails = (index) => {
+        setExpandedIndex(expandedIndex === index ? null : index); // 클릭 시 세부 정보 토글
+    };
+
     return (
         <div className="event-list">
-            {/* 리스트 제목 */}
-            <h2>Selected Dates</h2>
-            {/* 이벤트가 하나 이상 존재하면 이벤트 목록을 표시, 아니면 메시지 표시 */}
+            <span className="event-list-title">Selected Dates</span>
             {events.length > 0 ? (
                 events.map((event, index) => (
-                    // 이벤트 아이템 구성 요소
-                    // 'title', 'content', 'details', 'date' 등의 정보와 이미지가 있을 경우 이미지를 표시
                     <div key={index} className="event-item">
-                        <h3>{event.title}</h3> {/* 이벤트 제목 */}
-                        <p>{event.content}</p> {/* 이벤트 간략 내용 */}
-                        <p>{event.details}</p> {/* 이벤트 상세 설명 */}
-                        <span>{event.date}</span> {/* 이벤트 날짜 */}
-                        {event.image && <img src={event.image} alt="Event" />} {/* 이벤트 이미지 */}
+                        <div className="event-summary" onClick={() => toggleDetails(index)}>
+                            <div className="event-image">
+                                {event.image && <img src={event.image} alt="Event" />}
+                            </div>
+                            <div className="event-info">
+                                <span className="event-title">{event.title}</span>
+                                <span className="event-description">{event.description}</span>
+                                <span className="event-date">{event.date}</span>
+                            </div>
+                        </div>
+                        {expandedIndex === index && (
+                            <div className="event-details">
+                                <span>{event.details}</span>
+                            </div>
+                        )}
                     </div>
                 ))
             ) : (
-                // 이벤트가 없을 경우 표시할 메시지
-                <p>No events selected.</p>
+                <span className="no-events">No events selected.</span>
             )}
         </div>
     );
