@@ -6,7 +6,7 @@
     cursor: pointer;
     transition: border-color 0.3s ease;
     border-radius: 5px;
-    border: 3px solid transparent;
+    border: 2.5px solid transparent;
     box-sizing: border-box;
 }
 

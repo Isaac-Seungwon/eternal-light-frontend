@@ -6,65 +6,92 @@
 }
 
 .event-list-title {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.event-year {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
     font-weight: bold;
 }
 
-.event-year, .event-month {
-    display: block; /* 년도와 월을 블록으로 표시 */
+.event-month {
     margin-top: 10px;
     font-size: 16px;
-    font-weight: bold;
     color: #333;
 }
 
 .event-item {
-    margin-bottom: 12px;
+    margin-bottom: 4px;
     padding: 10px;
-    border-bottom: 1px solid #eaeaea;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-}
-
-.event-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0px;
+    text-align: left;
 }
 
 .event-summary {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .event-image img {
-    max-width: 80px;
-    max-height: 80px;
+    max-width: 60px;
+    max-height: 60px;
     border-radius: 4px;
     margin-right: 10px;
 }
 
-.event-info h3 {
+.event-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-title {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 
-.event-info p, .event-info span {
-    margin: 5px 0;
+.event-description {
+    margin: 4px 0;
     font-size: 14px;
     color: #666;
 }
 
+.event-date {
+    margin: 4px 0;
+    font-size: 10px;
+    color: #666;
+}
+
 .event-details {
-    padding-top: 10px;
-    font-size: 14px;
+    padding: 10px 4px 10px 4px;
+    margin-top: 4px;
+    font-size: 12px;
     color: #444;
     border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
     animation: slide-down 0.3s ease-out;
+}
+
+.event-details-content {
+    margin: 2px 0;
 }
 
 @keyframes slide-down {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+.event-item:last-child {
+    margin-bottom: 0px;
+}
+
+.event-list span {
+    display: block;
 }

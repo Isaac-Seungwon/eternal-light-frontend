@@ -29,10 +29,10 @@ const EventList = ({ events }) => {
 
     return (
         <div className="event-list">
-            <span className="event-list-title">Selected Dates</span>
+            <span className="event-list-title"></span>
             {Object.entries(groupedEvents).map(([year, months]) => (
                 <div key={year}>
-                    <span className="event-year">{year}</span> {/* 연도 표시 */}
+                    <span className="event-year">- {year} -</span> {/* 연도 표시 */}
                     {Object.entries(months).map(([month, events]) => (
                         <div key={month}>
                             <span className="event-month">{monthNames[month - 1]}</span> {/* 월을 영문으로 표시 */}
@@ -43,15 +43,15 @@ const EventList = ({ events }) => {
                                             {event.image && <img src={event.image} alt="Event" />}
                                         </div>
                                         <div className="event-info">
-                                            <h3>{event.title}</h3>
-                                            <p>{event.description}</p>
-                                            <span>{event.date}</span>
+                                            <span className="event-title">{event.title}</span>
+                                            <span className="event-description">{event.description}</span>
+                                            <span className="event-date">{event.date}</span>
                                         </div>
                                     </div>
                                     {/* 연도와 월이 같은 경우에만 디테일 보여주기 */}
                                     {expandedIndex === `${year}-${month}-${index}` && (
                                         <div className="event-details">
-                                            <p>{event.details}</p> {/* 추가 세부 내용 */}
+                                            <span className="event-details-content">{event.details}</span> {/* 추가 세부 내용 */}
                                         </div>
                                     )}
                                 </div>
@@ -60,7 +60,7 @@ const EventList = ({ events }) => {
                     ))}
                 </div>
             ))}
-            {events.length === 0 && <p>No events selected.</p>}
+            {events.length === 0 && <span>No events selected.</span>}
         </div>
     );
 };
