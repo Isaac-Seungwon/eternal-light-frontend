@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Month from './Month';
 import './Calendar.css';
 
-const Calendar = ({ year, onDayClick }) => { // onDayClick prop 추가
+const Calendar = ({ year, onDayClick }) => {
     const [filledDates, setFilledDates] = useState({});
 
     const months = [
@@ -23,10 +23,10 @@ const Calendar = ({ year, onDayClick }) => { // onDayClick prop 추가
 
     const handleToggleDate = (monthIndex, date) => {
         const monthKey = monthIndex + 1;
-        
+
         // 날짜가 클릭되었을 때 onDayClick 호출
         if (onDayClick) {
-            onDayClick(year, monthKey, date); // 년, 월, 날짜 전달
+            onDayClick(year, monthKey, date, !filledDates[year]?.[monthKey]?.[date]); // 선택 상태 전달
         }
 
         setFilledDates((prev) => ({
@@ -50,10 +50,10 @@ const Calendar = ({ year, onDayClick }) => { // onDayClick prop 추가
                         key={index}
                         month={month.name}
                         days={month.days}
-                        filledDates={filledDates[year]?.[index + 1] || {}} // 해당 년도의 월 상태 전달
+                        filledDates={filledDates[year]?.[index + 1] || {}}
                         onToggleDate={handleToggleDate}
-                        monthIndex={index} // 월 인덱스 전달
-                        year={year} // year 전달
+                        monthIndex={index}
+                        year={year}
                     />
                 ))}
             </div>
