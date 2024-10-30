@@ -1,3 +1,4 @@
+// App.jsx
 import React, { useState } from 'react';
 import Homepage from './pages/Homepage';
 import Sidebar from './components/Sidebar';
@@ -12,7 +13,7 @@ const App = () => {
 
     return (
         <div className="App">
-            <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} /> {/* toggleSidebar 전달 */}
+            <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
             <div className={`main-content ${isSidebarOpen ? 'shifted' : ''}`}>
                 <Homepage />
             </div>

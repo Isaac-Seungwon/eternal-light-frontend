@@ -2,6 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0px 0px 20px 0px;
+}
+
+.calendar-container > span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0px 10px 0px;
 }
 
 .calendar {
@@ -14,4 +22,25 @@
 .calendar-wrapper {
     display: flex;
     justify-content: center;
+}
+
+/* 화면 너비가 1024px 이하일 때 */
+@media (max-width: 1024px) {
+    .calendar {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 화면 너비가 768px 이하일 때 */
+@media (max-width: 768px) {
+    .calendar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 화면 너비가 480px 이하일 때 */
+@media (max-width: 480px) {
+    .calendar {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

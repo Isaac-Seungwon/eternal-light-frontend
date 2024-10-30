@@ -10,6 +10,7 @@
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 1000;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -44,8 +45,20 @@
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s ease;
+    z-index: 1001;
 }
 
 .sidebar-toggle-button:hover {
     background-color: #6a57a8;
+}
+
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    width: 90%;
+}
+
+.sidebar a:hover {
+    background-color: #eaeaea;
 }

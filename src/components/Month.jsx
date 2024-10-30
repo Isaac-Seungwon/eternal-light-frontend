@@ -22,7 +22,7 @@ const Month = ({ month, days, filledDates, onToggleDate, monthIndex, year }) => 
 
     return (
         <div className="month">
-            <h2>{month}</h2>
+            <span>{month}</span>
             <div className="month-calendar">
                 {weeks.map((week, weekIndex) => (
                     <div className="week" key={weekIndex}>
