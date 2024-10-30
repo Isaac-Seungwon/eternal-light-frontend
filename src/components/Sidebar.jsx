@@ -2,8 +2,6 @@
 import React from 'react';
 import './Sidebar.css';
 
-// Sidebar 컴포넌트
-// 사이드바가 열리고 닫히는 애니메이션과 함께 Home, Calendar, Settings 링크를 표시
 const Sidebar = ({ isOpen, toggleSidebar }) => {
     return (
         <div className={`sidebar ${isOpen ? 'open' : ''}`}> {/* 사이드바 상태에 따라 CSS 클래스 변경 */}

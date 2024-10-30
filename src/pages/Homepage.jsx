@@ -1,17 +1,14 @@
-// Homepage.jsx
 import React, { useState, useRef } from 'react';
 import Calendar from '../components/Calendar';
-import Modal from '../components/Modal';
+// import Modal from '../components/Modal';
 import Selectbox from '../components/Selectbox';
 import EventList from '../components/EventList';
 import { useTransition, animated } from '@react-spring/web';
 import './Homepage.css';
 
-// Homepage 컴포넌트
-// 달력, 모달, 연도 선택 기능을 포함한 메인 페이지
 const Homepage = () => {
     const [years, setYears] = useState([new Date().getFullYear()]); // 선택된 연도들 저장
-    const [isModalOpen, setIsModalOpen] = useState(false); // 모달 열림 상태
+    // const [isModalOpen, setIsModalOpen] = useState(false); // 모달 열림 상태
     const [events, setEvents] = useState([]); // 이벤트 목록 상태
     const [selectedDates, setSelectedDates] = useState([]); // 여러 날짜를 선택할 수 있도록 날짜 배열
     const calendarRefs = useRef({}); // 각 연도의 Calendar 컴포넌트 참조 저장
@@ -43,7 +40,7 @@ const Homepage = () => {
     };
 
     // 모달 열기/닫기
-    const toggleModal = () => setIsModalOpen(!isModalOpen);
+    // const toggleModal = () => setIsModalOpen(!isModalOpen);
 
     // Daybox 클릭 핸들러 - 선택된 날짜에 이벤트 추가 또는 제거
     const handleDayboxClick = (year, month, date, isFilled) => {
@@ -78,9 +75,28 @@ const Homepage = () => {
         <div className="homepage">
             <div className="section-1">
                 {/* 모달 토글 버튼 */}
+                {/* 
                 <button onClick={toggleModal}>
                     {isModalOpen ? 'Hide Selectbox' : 'Show Selectbox'}
                 </button>
+                 */}
+                {/* Selectbox 모달 렌더링 */}
+                {/* 
+                {isModalOpen && (
+                    <Modal onClose={toggleModal}>
+                        <Selectbox
+                            selectedYears={years} // 현재 선택된 연도 배열 전달
+                            onYearChange={handleYearChange} // 연도 변경 핸들러 전달
+                            onScrollToYear={handleScrollToYear} // 특정 연도로 스크롤하는 핸들러 전달
+                        />
+                    </Modal>
+                )}
+                */}
+                <Selectbox
+                    selectedYears={years} // 현재 선택된 연도 배열 전달
+                    onYearChange={handleYearChange} // 연도 변경 핸들러 전달
+                    onScrollToYear={handleScrollToYear} // 특정 연도로 스크롤하는 핸들러 전달
+                />
             </div>
             <div className="section-2">
                 {/* 홈페이지 타이틀 */}
@@ -100,17 +116,6 @@ const Homepage = () => {
                 {/* 선택된 날짜에 대한 이벤트 목록 */}
                 <EventList events={filteredEvents} />
             </div>
-
-            {/* Selectbox 모달 렌더링 */}
-            {isModalOpen && (
-                <Modal onClose={toggleModal}>
-                    <Selectbox
-                        selectedYears={years} // 현재 선택된 연도 배열 전달
-                        onYearChange={handleYearChange} // 연도 변경 핸들러 전달
-                        onScrollToYear={handleScrollToYear} // 특정 연도로 스크롤하는 핸들러 전달
-                    />
-                </Modal>
-            )}
         </div>
     );
 };
