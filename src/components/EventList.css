@@ -6,11 +6,16 @@
 }
 
 .event-list-title {
-    display: block;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.event-year, .event-month {
+    display: block; /* 년도와 월을 블록으로 표시 */
+    margin-top: 10px;
+    font-size: 16px;
     font-weight: bold;
     color: #333;
-    padding-bottom: 10px;
 }
 
 .event-item {
@@ -38,31 +43,17 @@
     border-radius: 4px;
     margin-right: 10px;
 }
-.event-info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
 
-.event-info .event-title {
-    display: block;
+.event-info h3 {
+    margin: 0;
     font-size: 16px;
     font-weight: bold;
-    color: #333;
 }
 
-.event-info .event-description {
-    display: block;
+.event-info p, .event-info span {
+    margin: 5px 0;
     font-size: 14px;
     color: #666;
-    margin-top: 4px;
-}
-
-.event-date {
-    display: block;
-    font-size: 10px;
-    color: #666;
-    margin-top: 8px;
 }
 
 .event-details {
@@ -71,13 +62,6 @@
     color: #444;
     border-top: 1px solid #eaeaea;
     animation: slide-down 0.3s ease-out;
-}
-
-.no-events {
-    font-size: 14px;
-    color: #888;
-    display: block;
-    padding-top: 10px;
 }
 
 @keyframes slide-down {
