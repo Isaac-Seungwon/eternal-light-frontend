@@ -1,12 +1,12 @@
-// Sidebar.jsx
+// SideBar.jsx
 import React from 'react';
-import './Sidebar.css';
+import './SideBar.css';
 
-const Sidebar = ({ isOpen, toggleSidebar }) => {
+const SideBar = ({ isOpen, toggleSideBar }) => {
     return (
-        <div className={`sidebar ${isOpen ? 'open' : ''}`}> {/* 사이드바 상태에 따라 CSS 클래스 변경 */}
+        <div className={`SideBar ${isOpen ? 'open' : ''}`}> {/* 사이드바 상태에 따라 CSS 클래스 변경 */}
             {/* 사이드바 토글 버튼 */}
-            <button onClick={toggleSidebar} className="sidebar-toggle-button">
+            <button onClick={toggleSideBar} className="SideBar-toggle-button">
                 {isOpen ? '←' : '→'} {/* 사이드바가 열려 있으면 닫기 아이콘(←), 닫혀 있으면 열기 아이콘(→) */}
             </button>
 
@@ -18,4 +18,4 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     );
 };
 
-export default Sidebar;
+export default SideBar;

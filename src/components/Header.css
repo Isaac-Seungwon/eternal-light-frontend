@@ -61,7 +61,7 @@
     cursor: pointer; /* 클릭 커서 */
 }
 
-/* Searchbar에 대한 스타일 추가 */
+/* SearchBar에 대한 스타일 추가 */
 .search-bar {
     display: flex;
     align-items: center;

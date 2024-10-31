@@ -1,7 +1,7 @@
 // Header.jsx
 import React from 'react';
 import './Header.css';
-import Searchbar from './Searchbar';
+import SearchBar from './SearchBar';
 import userImage from '../asset/image/user.png'; // 경로 확인 후 수정하세요.
 
 const Header = ({ title }) => (
@@ -16,7 +16,7 @@ const Header = ({ title }) => (
                     <li><a href="#settings">⚙️ Settings</a></li>
                 </ul>
             </nav>
-            <Searchbar /> {/* 검색 바 추가 */}
+            <SearchBar /> {/* 검색 바 추가 */}
             <div className="user-settings" onClick={() => { /* 사용자 설정 페이지로 이동 */ alert('User settings page'); }}>
                 <img src={userImage} alt="User" className="user-image" />
             </div>

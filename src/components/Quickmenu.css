@@ -1,11 +1,11 @@
-/* Quickmenu.css */
+/* QuickMenu.css */
 .quick-menu {
     position: fixed;
     display: flex;
     align-items: center;
     cursor: grab;
     z-index: 1000;
-    transition: transform 0.1s ease; /* 드래그 시 부드러운 이동 */
+    transition: transform 0.1s ease;
 }
 
 .circle-button {
@@ -24,7 +24,7 @@
 
 .circle-button:hover {
     background-color: #45A049;
-    transform: scale(1.1); /* 호버 시 확대 효과 */
+    transform: scale(1.1);
 }
 
 .menu-items {
@@ -32,7 +32,7 @@
     flex-direction: row;
     margin-left: 10px;
     animation: menu-slide-in 0.4s ease forwards;
-    opacity: 0; /* 메뉴 초기 상태에서 투명 */
+    opacity: 0;
 }
 
 .menu-item {
@@ -44,7 +44,8 @@
     font-size: 14px;
     transition: transform 0.4s ease, opacity 0.4s ease;
     opacity: 0;
-    transform: translateX(-20px); /* 초기 위치 설정 */
+    transform: translateX(-20px);
+    transform: translateY(-20px);
 }
 
 .menu-item:nth-child(1) { animation-delay: 0.1s; }

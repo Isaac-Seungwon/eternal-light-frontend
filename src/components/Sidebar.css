@@ -1,5 +1,5 @@
-/* Sidebar.css */
-.sidebar {
+/* SideBar.css */
+.SideBar {
     width: 200px;
     height: 100vh;
     background-color: #f5f5f5;
@@ -16,23 +16,23 @@
     transition: transform 0.3s ease;
 }
 
-.sidebar.open {
+.SideBar.open {
     transform: translateX(0);
 }
 
-.sidebar a {
+.SideBar a {
     text-decoration: none;
     color: #333;
     margin: 10px 0;
     font-size: 18px;
 }
 
-.sidebar a:hover {
+.SideBar a:hover {
     color: #8776c7;
 }
 
 /* 토글 버튼 스타일 */
-.sidebar-toggle-button {
+.SideBar-toggle-button {
     position: absolute;
     top: 20px;
     right: -40px;
@@ -48,17 +48,17 @@
     z-index: 1001;
 }
 
-.sidebar-toggle-button:hover {
+.SideBar-toggle-button:hover {
     background-color: #6a57a8;
 }
 
-.sidebar a {
+.SideBar a {
     padding: 10px;
     text-decoration: none;
     text-align: center;
     width: 90%;
 }
 
-.sidebar a:hover {
+.SideBar a:hover {
     background-color: #eaeaea;
 }

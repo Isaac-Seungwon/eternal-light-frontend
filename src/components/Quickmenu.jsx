@@ -1,6 +1,7 @@
-import './Quickmenu.css';
+// QuickMenu.jsx
+import './QuickMenu.css';
 
-const Quickmenu = () => {
+const QuickMenu = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [position, setPosition] = useState({ x: 20, y: 800 });
 
@@ -39,4 +40,4 @@ const Quickmenu = () => {
     );
 };
 
-export default Quickmenu;
+export default QuickMenu;

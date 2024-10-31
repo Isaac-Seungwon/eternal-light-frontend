@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react';
 import Calendar from '../components/Calendar';
 // import Modal from '../components/Modal';
-import Selectbox from '../components/Selectbox';
+import SelectBox from '../components/SelectBox';
 import EventList from '../components/EventList';
 import { useTransition, animated } from '@react-spring/web';
-import './Homepage.css';
+import './HomePage.css';
 
-const Homepage = () => {
+const HomePage = () => {
     const [years, setYears] = useState([new Date().getFullYear()]); // 선택된 연도들 저장
     // const [isModalOpen, setIsModalOpen] = useState(false); // 모달 열림 상태
     const [events, setEvents] = useState([]); // 이벤트 목록 상태
@@ -72,19 +72,19 @@ const Homepage = () => {
         .sort((a, b) => new Date(a.date) - new Date(b.date));
 
     return (
-        <div className="homepage">
+        <div className="HomePage">
             <div className="section-1">
                 {/* 모달 토글 버튼 */}
                 {/* 
                 <button onClick={toggleModal}>
-                    {isModalOpen ? 'Hide Selectbox' : 'Show Selectbox'}
+                    {isModalOpen ? 'Hide SelectBox' : 'Show SelectBox'}
                 </button>
                  */}
-                {/* Selectbox 모달 렌더링 */}
+                {/* SelectBox 모달 렌더링 */}
                 {/* 
                 {isModalOpen && (
                     <Modal onClose={toggleModal}>
-                        <Selectbox
+                        <SelectBox
                             selectedYears={years} // 현재 선택된 연도 배열 전달
                             onYearChange={handleYearChange} // 연도 변경 핸들러 전달
                             onScrollToYear={handleScrollToYear} // 특정 연도로 스크롤하는 핸들러 전달
@@ -92,7 +92,7 @@ const Homepage = () => {
                     </Modal>
                 )}
                 */}
-                <Selectbox
+                <SelectBox
                     selectedYears={years} // 현재 선택된 연도 배열 전달
                     onYearChange={handleYearChange} // 연도 변경 핸들러 전달
                     onScrollToYear={handleScrollToYear} // 특정 연도로 스크롤하는 핸들러 전달
@@ -100,7 +100,7 @@ const Homepage = () => {
             </div>
             <div className="section-2">
                 {/* 홈페이지 타이틀 */}
-                <span className="homepage-title">Seungwon Lee</span>
+                <span className="HomePage-title">Calendar Name</span>
                 
                 {/* 연도별 Calendar 컴포넌트 렌더링 */}
                 {transitions((style, year, _, index) => (
@@ -120,4 +120,4 @@ const Homepage = () => {
     );
 };
 
-export default Homepage;
+export default HomePage;

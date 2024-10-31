@@ -1,13 +1,13 @@
 // App.jsx
 import Header from './components/Header';
-import Homepage from './pages/Homepage';
+import HomePage from './pages/HomePage';
 import './App.css';
 
 const App = () => {
     return (
         <div className="App">
             <Header title="My Scheduling App" />
-            <Homepage />
+            <HomePage />
         </div>
     );
 };
