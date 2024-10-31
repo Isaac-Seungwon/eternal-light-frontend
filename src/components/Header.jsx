@@ -2,7 +2,7 @@
 import React from 'react';
 import './Header.css';
 import SearchBar from './SearchBar';
-import userImage from '../asset/image/user.png'; // 경로 확인 후 수정하세요.
+import userImage from '../assets/image/user.png'; // 경로 확인 후 수정하세요.
 
 const Header = ({ title }) => (
     <header className="app-header">
