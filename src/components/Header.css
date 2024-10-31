@@ -1,22 +1,90 @@
 /* Header.css */
 .app-header {
-    background-color: #282c34;
-    padding: 20px;
-    text-align: center;
+    background-color: #24292e; /* GitHub 헤더 색상 */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: white;
 }
 
-.app-logo {
-    height: 40vmin;
-    pointer-events: none;
-    animation: spin infinite 20s linear;
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%; /* 너비를 100%로 설정하여 가득 채우기 */
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.app-title {
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.menu {
+    margin: 0 20px; /* 메뉴 간격 추가 */
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: #f9826c; /* 호버 색상 */
+}
+
+.user-settings {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* 오른쪽 정렬 */
+    background-color: white; /* 사용자 이미지 배경 색상 */
+    border-radius: 50%; /* 둥글게 만들기 */
+    padding: 5px; /* 이미지와 배경 사이의 여백 */
+}
+
+.user-image {
+    width: 40px; /* 사용자 이미지 크기 조정 */
+    height: 40px;
+    border-radius: 50%; /* 원형으로 만들기 */
+    cursor: pointer; /* 클릭 커서 */
+}
+
+/* Searchbar에 대한 스타일 추가 */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+    background-color: #f9826c; /* 버튼 색상 */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #e67e22; /* 호버 시 색상 */
 }

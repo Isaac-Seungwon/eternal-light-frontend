@@ -1,44 +1,29 @@
-// Quickmenu.jsx
-import React, { useState, useEffect } from 'react';
 import './Quickmenu.css';
 
 const Quickmenu = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [position, setPosition] = useState({ x: 20, y: 800 });
-    const [isDragging, setIsDragging] = useState(false);
 
-    const toggleMenu = () => setMenuOpen((prev) => !prev);
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
-    // 드래그 시작
-    const handleMouseDown = (e) => {
-        e.preventDefault();
-        setIsDragging(true);
-        document.addEventListener('mousemove', handleDrag);
-        document.addEventListener('mouseup', handleMouseUp);
-    };
-
-    // 드래그 이동
     const handleDrag = (e) => {
-        if (isDragging) {
-            setPosition({
-                x: e.clientX - 25, // 중앙 정렬을 위해 25px 조정
-                y: e.clientY - 25,
-            });
-        }
-    };
-
-    // 드래그 종료
-    const handleMouseUp = () => {
-        setIsDragging(false);
-        document.removeEventListener('mousemove', handleDrag);
-        document.removeEventListener('mouseup', handleMouseUp);
+        setPosition({
+            x: e.clientX,
+            y: e.clientY,
+        });
     };
 
     return (
         <div
-            className={`quick-menu ${menuOpen ? 'open' : ''}`}
+            className="quick-menu"
             style={{ left: `${position.x}px`, top: `${position.y}px` }}
-            onMouseDown={handleMouseDown}
+            onMouseDown={(e) => {
+                e.preventDefault();
+                document.addEventListener('mousemove', handleDrag);
+                document.addEventListener('mouseup', () => {
+                    document.removeEventListener('mousemove', handleDrag);
+                });
+            }}
         >
             <div className="circle-button" onClick={toggleMenu}>
                 ☰
