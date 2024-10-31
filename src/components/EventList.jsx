@@ -29,7 +29,7 @@ const EventList = ({ events }) => {
 
     return (
         <div className="event-list">
-            <span className="event-list-title"></span>
+            <span className="event-list-title">Selected Dates</span>
             {Object.entries(groupedEvents).map(([year, months]) => (
                 <div key={year}>
                     <span className="event-year">- {year} -</span> {/* 연도 표시 */}
