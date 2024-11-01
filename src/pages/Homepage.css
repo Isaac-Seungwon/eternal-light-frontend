@@ -2,38 +2,30 @@
 .HomePage {
     display: flex;
     flex-direction: row;
-    /* height: 100vh; */
     overflow: hidden;
+}
+
+.section-1, .section-2, .section-3 {
+    padding: 10px;
 }
 
 .section-1 {
     width: 20%;
-    padding: 10px;
-    /* background-color: #f0f0f0; */
-    /* border: 1px solid rgb(154, 154, 154); */
 }
 
 .section-2 {
     width: 60%;
-    padding: 10px;
     display: flex;
-    /* border: 1px solid #ddd; */
-    /* border-radius: 8px; */
-    /* margin: 10px; */
     flex-direction: column;
-    height: auto;
-    /* min-height: calc(100vh - 20px); */
     min-width: 400px;
     overflow-y: auto;
 }
 
 .section-3 {
     width: 20%;
-    padding: 10px;
-    /* background-color: #f0f0f0; */
-    /* border: 1px solid rgb(154, 154, 154); */
 }
 
+/* Title and Divider */
 .HomePage-title {
     font-size: 16px;
     font-weight: bold;
@@ -47,4 +39,15 @@
     height: 1px;
     background-color: #ccc;
     margin: 10px 0;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .HomePage {
+        flex-direction: column;
+    }
+
+    .section-1, .section-2, .section-3 {
+        width: 100%;
+    }
 }
