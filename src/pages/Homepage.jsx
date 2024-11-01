@@ -94,12 +94,6 @@ const HomePage = () => {
                     </Modal>
                 )}
                 */}
-                <SelectBox
-                    selectedYears={years} // 현재 선택된 연도 배열 전달
-                    onYearChange={handleYearChange} // 연도 변경 핸들러 전달
-                    onScrollToYear={handleScrollToYear} // 특정 연도로 스크롤하는 핸들러 전달
-                />
-
                 <UserProfile 
                     imageSrc={require('../assets/image/user.png')} 
                     name="User Name" 
@@ -107,6 +101,12 @@ const HomePage = () => {
                     age={30}
                     location="Seoul, South Korea"
                     badges={["Contributor", "Top Reviewer", "Early Adopter"]}
+                />
+
+                <SelectBox
+                    selectedYears={years} // 현재 선택된 연도 배열 전달
+                    onYearChange={handleYearChange} // 연도 변경 핸들러 전달
+                    onScrollToYear={handleScrollToYear} // 특정 연도로 스크롤하는 핸들러 전달
                 />
             </div>
             <div className="section-2">
