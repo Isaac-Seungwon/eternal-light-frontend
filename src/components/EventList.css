@@ -1,8 +1,16 @@
+/* EventList.css */
 .event-list {
+    position: relative;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     max-width: 15.625rem;
+    max-height: 35rem;
+    overflow-x: hidden;
+}
+
+.event-list:not(:first-child) {
+    margin-top: 30px;
 }
 
 .event-list-title {

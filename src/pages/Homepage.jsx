@@ -9,7 +9,6 @@ import './HomePage.css';
 
 const HomePage = () => {
     const [years, setYears] = useState([new Date().getFullYear()]); // 선택된 연도들 저장
-    // const [isModalOpen, setIsModalOpen] = useState(false); // 모달 열림 상태
     const [events, setEvents] = useState([]); // 이벤트 목록 상태
     const [selectedDates, setSelectedDates] = useState([]); // 여러 날짜를 선택할 수 있도록 날짜 배열
     const calendarRefs = useRef({}); // 각 연도의 Calendar 컴포넌트 참조 저장
@@ -40,9 +39,6 @@ const HomePage = () => {
         }
     };
 
-    // 모달 열기/닫기
-    // const toggleModal = () => setIsModalOpen(!isModalOpen);
-
     // Daybox 클릭 핸들러 - 선택된 날짜에 이벤트 추가 또는 제거
     const handleDayboxClick = (year, month, date, isFilled) => {
         const selectedDateString = `${year}-${month}-${date}`;
@@ -67,10 +63,12 @@ const HomePage = () => {
         }
     };
 
-    // 선택된 날짜의 이벤트만 필터링 및 날짜순 정렬
-    const filteredEvents = events
-        .filter(event => selectedDates.includes(event.date))
-        .sort((a, b) => new Date(a.date) - new Date(b.date));
+    // 연도별로 이벤트 필터링
+    const getEventsForYear = (year) => {
+        return events
+            .filter(event => event.date.startsWith(year.toString()))
+            .sort((a, b) => new Date(a.date) - new Date(b.date));
+    };
 
     return (
         <div className="HomePage">
@@ -102,8 +100,10 @@ const HomePage = () => {
                 ))}
             </div>
             <div className="section-3">
-                {/* 선택된 날짜에 대한 이벤트 목록 */}
-                <EventList events={filteredEvents} />
+                {/* 연도별 이벤트 목록 렌더링 */}
+                {years.map((year) => (
+                    <EventList key={year} year={year} events={getEventsForYear(year)} />
+                ))}
             </div>
         </div>
     );

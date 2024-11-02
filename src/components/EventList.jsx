@@ -1,22 +1,22 @@
+// EventList.jsx
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './EventList.css';
 
-// 월 숫자를 영문으로 변환하는 함수
 const monthNames = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ];
 
 const EventList = ({ events }) => {
-    const [expandedIndex, setExpandedIndex] = useState(null); // 확장된 이벤트의 인덱스 상태
-
+    const [expandedIndex, setExpandedIndex] = useState(null);
+    
     const toggleDetails = (index) => {
-        setExpandedIndex(expandedIndex === index ? null : index); // 클릭 시 세부 정보 토글
+        setExpandedIndex(expandedIndex === index ? null : index);
     };
 
-    // 이벤트를 연도와 월에 따라 그룹화
     const groupedEvents = events.reduce((acc, event) => {
-        const [year, month] = event.date.split('-'); // YYYY-MM-DD 형식에서 연도와 월 추출
+        const [year, month] = event.date.split('-');
         if (!acc[year]) {
             acc[year] = {};
         }
@@ -32,12 +32,18 @@ const EventList = ({ events }) => {
             <span className="event-list-title">Selected Dates</span>
             {Object.entries(groupedEvents).map(([year, months]) => (
                 <div key={year}>
-                    <span className="event-year">- {year} -</span> {/* 연도 표시 */}
+                    <span className="event-year">- {year} -</span>
                     {Object.entries(months).map(([month, events]) => (
                         <div key={month}>
-                            <span className="event-month">{monthNames[month - 1]}</span> {/* 월을 영문으로 표시 */}
+                            <span className="event-month">{monthNames[month - 1]}</span>
                             {events.map((event, index) => (
-                                <div key={index} className="event-item">
+                                <motion.div
+                                    key={`${year}-${month}-${event.title}-${index}`} // 고유한 키 사용
+                                    className="event-item"
+                                    initial={{ opacity: 0, translateY: -10 }}
+                                    animate={{ opacity: 1, translateY: 0 }}
+                                    exit={{ opacity: 0, translateY: -10 }}
+                                >
                                     <div className="event-summary" onClick={() => toggleDetails(`${year}-${month}-${index}`)}>
                                         <div className="event-image">
                                             {event.image && <img src={event.image} alt="Event" />}
@@ -48,13 +54,18 @@ const EventList = ({ events }) => {
                                             <span className="event-date">{event.date}</span>
                                         </div>
                                     </div>
-                                    {/* 연도와 월이 같은 경우에만 디테일 보여주기 */}
-                                    {expandedIndex === `${year}-${month}-${index}` && (
-                                        <div className="event-details">
-                                            <span className="event-details-content">{event.details}</span> {/* 추가 세부 내용 */}
-                                        </div>
+                                    {expandedIndex === `${year}-${month}-${index}` && ( // 고유한 키로 비교
+                                        <motion.div
+                                            initial={{ height: 0 }}
+                                            animate={{ height: "auto" }}
+                                            exit={{ height: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="event-details"
+                                        >
+                                            <span className="event-details-content">{event.details}</span>
+                                        </motion.div>
                                     )}
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     ))}
