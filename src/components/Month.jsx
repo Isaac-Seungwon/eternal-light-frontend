@@ -11,6 +11,12 @@ const Month = ({ month, days, filledDates, onToggleDate, monthIndex, year }) => 
     // 월의 첫 번째 날짜가 무슨 요일인지 계산 (0: 일요일, 1: 월요일, ..., 6: 토요일)
     const firstDayOfMonth = new Date(year, monthIndex, 1).getDay();
 
+    // 오늘 날짜 정보
+    const today = new Date();
+    const todayMonth = today.getMonth(); // 현재 월
+    const todayDate = today.getDate(); // 현재 날짜
+    const todayYear = today.getFullYear(); // 현재 연도
+
     // 첫 주의 첫날 이전에 필요한 빈 날짜 수만큼 null을 채움
     const emptyDays = Array.from({ length: firstDayOfMonth }, () => null);
 
@@ -53,6 +59,7 @@ const Month = ({ month, days, filledDates, onToggleDate, monthIndex, year }) => 
                                     key={dateIndex} 
                                     filled={filledDates[date] || false} // 선택된 날짜에 대해 채움 여부 확인
                                     onClick={() => onToggleDate(monthIndex, date)} // 날짜 클릭 시 상태 변경 함수 호출
+                                    isToday={date === todayDate && monthIndex === todayMonth && year === todayYear} // 오늘 날짜 확인
                                 >
                                     {date} {/* Daybox 내부에 날짜 표시 */}
                                 </Daybox>

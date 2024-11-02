@@ -1,7 +1,7 @@
 /* Calendar.css */
 .calendar-container {
     display: flex;
-    flex-direction: row; /* 수평 방향으로 정렬 */
+    flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
     margin: 0px 0px 20px 0px;
