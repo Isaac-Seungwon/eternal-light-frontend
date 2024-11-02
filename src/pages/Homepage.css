@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    max-width: 1400px;
+    margin: 0 auto; /* 화면 중앙에 배치 */
 }
 
 .section-1, .section-2, .section-3 {
@@ -10,19 +12,21 @@
 }
 
 .section-1 {
-    width: 20%;
+    flex: 1;
+    min-width: 200px;
 }
 
 .section-2 {
-    width: 60%;
+    flex: 3;
     display: flex;
     flex-direction: column;
-    min-width: 400px;
+    min-width: 350px;
     overflow-y: auto;
 }
 
 .section-3 {
-    width: 20%;
+    flex: 1;
+    min-width: 250px;
 }
 
 /* Title and Divider */
@@ -31,14 +35,14 @@
     font-weight: bold;
     color: #333;
     text-align: center;
-    margin: 20px 0px 20px 0px;
+    margin: 15px 0px; /* 간격을 줄여서 압축된 느낌 */
 }
 
 .divider {
     width: 100%;
     height: 1px;
     background-color: #ccc;
-    margin: 10px 0;
+    margin: 8px 0; /* 구분선 간격을 줄여서 일체감 조성 */
 }
 
 /* Media query for screens smaller than 768px */

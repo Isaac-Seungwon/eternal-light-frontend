@@ -1,11 +1,12 @@
 /* Header.css */
+
 .app-header {
     background-color: #f2f2f2;
     border-bottom: 1px solid #cacaca;
     padding: 10px 20px;
 }
 
-/* 첫 번째 단 스타일 */
+/* First section styles */
 .header-top {
     display: flex;
     justify-content: space-between;
@@ -14,21 +15,28 @@
 }
 
 .header-left {
-    flex: 1;
+    display: flex; /* Align icon and title horizontally */
+    align-items: center;
     text-align: left;
 }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* 검색 바와 사용자 이미지 간의 간격 */
-    text-align: right;
+.logo-icon {
+    font-size: 24px;
+    margin-right: 8px;
 }
 
 .app-title {
     font-size: 24px;
     font-weight: bold;
     margin: 0;
+}
+
+/* Remaining styles */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: right;
 }
 
 .user-settings {
@@ -46,7 +54,7 @@
     border-radius: 50%;
 }
 
-/* 두 번째 단 스타일 */
+/* Second section styles */
 .menu {
     text-align: center;
 }
@@ -60,17 +68,17 @@
 }
 
 .menu li {
-    margin: 0px;
+    margin: 4px 14px 4px 0px;
 }
 
 .menu a {
     text-decoration: none;
     color: rgb(45, 45, 45);
-    padding: 8px 32px 8px 0px;
+    padding: 6px 8px 6px 8px;
     border-radius: 4px;
     transition: background-color 0.3s;
 }
 
 .menu a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(58, 58, 58, 0.1);
 }

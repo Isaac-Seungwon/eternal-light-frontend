@@ -6,7 +6,7 @@ import './App.css';
 const App = () => {
     return (
         <div className="App">
-            <Header title="My Scheduling App" />
+            <Header title="Eternal Light" />
             <HomePage />
         </div>
     );

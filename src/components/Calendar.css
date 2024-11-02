@@ -25,21 +25,18 @@
     justify-content: center;
 }
 
-/* 화면 너비가 1024px 이하일 때 */
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
     .calendar {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* 화면 너비가 768px 이하일 때 */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .calendar {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* 화면 너비가 480px 이하일 때 */
 @media (max-width: 480px) {
     .calendar {
         grid-template-columns: repeat(1, 1fr);

@@ -3,13 +3,14 @@ import React from 'react';
 import './Header.css';
 import SearchBar from './SearchBar';
 import userImage from '../assets/image/user.png';
-import { FaHome, FaStar, FaCalendarAlt, FaCog } from 'react-icons/fa';
+import { FaHome, FaStar, FaCalendarAlt, FaCog, FaRegCalendarAlt } from 'react-icons/fa';
 
 const Header = ({ title }) => (
     <header className="app-header">
-        {/* 첫 번째 단: 왼쪽과 오른쪽으로 구분 */}
+        {/* First section: Left and Right */}
         <div className="header-top">
             <div className="header-left">
+                <FaRegCalendarAlt className="logo-icon" /> {/* Icon logo next to title */}
                 <h1 className="app-title">{title}</h1>
             </div>
             <div className="header-right">
@@ -20,7 +21,7 @@ const Header = ({ title }) => (
             </div>
         </div>
 
-        {/* 두 번째 단: 메뉴 */}
+        {/* Second section: Menu */}
         <nav className="menu">
             <ul>
                 <li><a href="#home"><FaHome /> Home</a></li>
