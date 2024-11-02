@@ -1,52 +1,49 @@
-/* HomePage.css */
 .HomePage {
     display: flex;
     flex-direction: row;
     overflow: hidden;
-    max-width: 1400px;
-    margin: 0 auto; /* 화면 중앙에 배치 */
+    max-width: 87.5rem; /* 1400px */
+    margin: 0 auto;
 }
 
 .section-1, .section-2, .section-3 {
-    padding: 10px;
+    padding: 0.625rem; /* 10px */
 }
 
 .section-1 {
     flex: 1;
-    min-width: 200px;
+    min-width: 12.5rem; /* 200px */
 }
 
 .section-2 {
     flex: 3;
     display: flex;
     flex-direction: column;
-    min-width: 350px;
+    min-width: 21.875rem; /* 350px */
     overflow-y: auto;
 }
 
 .section-3 {
     flex: 1;
-    min-width: 250px;
+    min-width: 15.625rem; /* 250px */
 }
 
-/* Title and Divider */
 .HomePage-title {
-    font-size: 16px;
+    font-size: 1rem; /* 16px */
     font-weight: bold;
     color: #333;
     text-align: center;
-    margin: 15px 0px; /* 간격을 줄여서 압축된 느낌 */
+    margin: 0.9375rem 0; /* 15px 0 */
 }
 
 .divider {
     width: 100%;
-    height: 1px;
+    height: 0.0625rem; /* 1px */
     background-color: #ccc;
-    margin: 8px 0; /* 구분선 간격을 줄여서 일체감 조성 */
+    margin: 0.5rem 0; /* 8px 0 */
 }
 
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
+@media (max-width: 48rem) { /* 768px */
     .HomePage {
         flex-direction: column;
     }

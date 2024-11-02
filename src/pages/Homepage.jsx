@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import Calendar from '../components/Calendar';
-// import Modal from '../components/Modal';
 import SelectBox from '../components/SelectBox';
 import EventList from '../components/EventList';
 import UserProfile from '../components/UserProfile';
@@ -76,24 +75,6 @@ const HomePage = () => {
     return (
         <div className="HomePage">
             <div className="section-1">
-                {/* 모달 토글 버튼 */}
-                {/* 
-                <button onClick={toggleModal}>
-                    {isModalOpen ? 'Hide SelectBox' : 'Show SelectBox'}
-                </button>
-                 */}
-                {/* SelectBox 모달 렌더링 */}
-                {/* 
-                {isModalOpen && (
-                    <Modal onClose={toggleModal}>
-                        <SelectBox
-                            selectedYears={years} // 현재 선택된 연도 배열 전달
-                            onYearChange={handleYearChange} // 연도 변경 핸들러 전달
-                            onScrollToYear={handleScrollToYear} // 특정 연도로 스크롤하는 핸들러 전달
-                        />
-                    </Modal>
-                )}
-                */}
                 <UserProfile 
                     imageSrc={require('../assets/image/user.png')} 
                     name="User Name" 

@@ -1,34 +1,30 @@
-/* SelectBox.css */
 .select-box {
     position: relative;
-    width: 300px;
+    max-width: 15.625rem;
 }
 
 .select-box-selected {
-    padding: 10px;
+    padding: 0.625rem; /* 10px */
     background-color: #f0f0f0;
     border: 1px solid #ccc;
-    border-radius: 2px;
-    width: 120px;
+    border-radius: 0.125rem; /* 2px */
+    width: 7.5rem; /* 120px */
     cursor: pointer;
 }
 
 .select-box-dropdown {
     position: absolute;
-    /* top: 0; */
-    /* left: 140px; */
     background-color: #ffffff;
     border: 1px solid #ccc;
-    max-height: 200px;
+    max-height: 12.5rem; /* 200px */
     overflow-y: scroll;
     z-index: 10;
-    width: 140px;
+    width: 8.75rem; /* 140px */
     scrollbar-width: none;
-    /* scrollbar-color: #888 #f0f0f0; */
 }
 
 .select-box-option {
-    padding: 8px 10px;
+    padding: 0.5rem 0.625rem; /* 8px 10px */
     cursor: pointer;
 }
 
@@ -41,16 +37,16 @@
 }
 
 .selected-years {
-    margin-top: 10px;
+    margin-top: 0.625rem; /* 10px */
     display: flex;
     flex-wrap: wrap;
 }
 
 .year-hashtag {
     background-color: #e0e0e0;
-    border-radius: 15px;
-    padding: 5px 10px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.3125rem 0.625rem; /* 5px 10px */
+    margin-right: 0.3125rem; /* 5px */
+    margin-bottom: 0.3125rem; /* 5px */
     cursor: pointer;
 }

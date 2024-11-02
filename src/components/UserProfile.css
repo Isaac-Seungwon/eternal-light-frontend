@@ -1,23 +1,19 @@
-/* UserProfile.css */
 .user-profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    /* border: 1px solid #ddd; */
-    border-radius: 8px;
-    max-width: 250px;
-    /* background-color: #f9f9f9; */
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.5rem; /* 8px */
+    max-width: 15.625rem; /* 250px */
 }
 
 .user-profile-image {
-    width: 200px;
-    height: 200px;
+    width: 12.5rem; /* 200px */
+    height: 12.5rem; /* 200px */
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
-    background-color: white; /* 배경이 투명일 경우 흰색으로 채움 */
-    border: 1px solid #ddd; /* 이미지를 구분하는 원형 테두리 */
+    background-color: white;
+    border: 1px solid #ddd;
 }
 
 .user-profile-info {
@@ -27,47 +23,47 @@
 .user-name {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem; /* 5px */
 }
 
 .user-description {
     font-size: 0.9rem;
     color: #555;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem; /* 10px */
 }
 
 .user-details {
     font-size: 0.85rem;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem; /* 10px */
 }
 
 .user-detail {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-bottom: 5px;
+    gap: 0.3125rem; /* 5px */
+    margin-bottom: 0.3125rem; /* 5px */
 }
 
 .achievement-title {
     font-size: 0.9rem;
     font-weight: bold;
     color: #333;
-    margin-top: 10px;
+    margin-top: 0.625rem; /* 10px */
     text-align: left;
 }
 
 .user-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 5px;
+    gap: 0.3125rem; /* 5px */
+    margin-top: 0.3125rem; /* 5px */
 }
 
 .user-badge {
     background-color: #4CAF50;
     color: white;
-    padding: 3px 8px;
-    border-radius: 4px;
+    padding: 0.1875rem 0.5rem; /* 3px 8px */
+    border-radius: 0.25rem; /* 4px */
     font-size: 0.75rem;
 }

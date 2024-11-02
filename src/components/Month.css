@@ -1,20 +1,17 @@
-/* Month.css */
 .month {
-    padding: 10px;
+    padding: 0.625rem; /* 10px */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .month span {
-    /* font-size: 1.2em; */
-    /* font-weight: bold; */
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem; /* 10px */
 }
 
 .week {
     display: flex;
-    margin-bottom: 4px;
-    gap: 4px;
+    margin-bottom: 0.25rem; /* 4px */
+    gap: 0.25rem; /* 4px */
 }

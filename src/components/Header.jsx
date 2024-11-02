@@ -24,10 +24,10 @@ const Header = ({ title }) => (
         <nav className="menu">
             <ul>
                 <li><a href="#home"><FaHome /> Overview</a></li>
-                <li><a href="#calendar"><FaCalendarAlt /> Calendars</a></li>
+                <li><a href="#calendars"><FaCalendarAlt /> Calendars</a></li>
                 <li><a href="#favorites"><FaStar /> Favorites</a></li>
-                <li><a href="#search"><FaSearch /> Search</a></li> {/* New Search */}
-                <li><a href="#recent-activities"><FaHistory /> Recent Activities</a></li> {/* New Recent Activities */}
+                <li><a href="#search"><FaSearch /> Search</a></li>
+                <li><a href="#history"><FaHistory /> History</a></li>
             </ul>
         </nav>
     </header>
