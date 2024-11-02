@@ -1,21 +1,20 @@
 /* Header.css */
-
 .app-header {
     background-color: #f2f2f2;
     border-bottom: 1px solid #cacaca;
     padding: 10px 20px;
 }
 
-/* First section styles */
 .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
+    margin: 4px 4px 4px 4px;
 }
 
 .header-left {
-    display: flex; /* Align icon and title horizontally */
+    display: flex;
     align-items: center;
     text-align: left;
 }
@@ -31,7 +30,6 @@
     margin: 0;
 }
 
-/* Remaining styles */
 .header-right {
     display: flex;
     align-items: center;
@@ -54,7 +52,6 @@
     border-radius: 50%;
 }
 
-/* Second section styles */
 .menu {
     text-align: center;
 }
