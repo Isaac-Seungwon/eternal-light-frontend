@@ -1,6 +1,7 @@
 // SelectBox.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import './SelectBox.css';
+import Notification from './Notification';
 
 const SelectBox = ({ selectedYears = [], onYearChange, onScrollToYear }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +10,8 @@ const SelectBox = ({ selectedYears = [], onYearChange, onScrollToYear }) => {
     );
     const dropdownRef = useRef();
     const [previousYear, setPreviousYear] = useState(lastSelectedYear);
+    const [notificationMessage, setNotificationMessage] = useState('');
+    const [showNotification, setShowNotification] = useState(false);
 
     const toggleDropdown = () => setIsOpen((prev) => !prev);
 
@@ -35,21 +38,35 @@ const SelectBox = ({ selectedYears = [], onYearChange, onScrollToYear }) => {
             const end = Math.max(previousYear, year);
             const newYears = Array.from({ length: end - start + 1 }, (_, i) => start + i);
 
-            newYears.forEach((newYear) => {
-                if (!selectedYears.includes(newYear)) {
+            const filteredYears = newYears.filter(newYear => !selectedYears.includes(newYear));
+            // 15개까지만 허용
+            if (selectedYears.length + filteredYears.length <= 15) {
+                filteredYears.forEach((newYear) => {
                     onYearChange(newYear);
-                }
-            });
+                });
+            } else {
+                showAlert();
+            }
         } else {
             if (selectedYears.includes(year)) {
                 // 이미 선택된 연도라면 해제
                 onYearChange(year, true); // true로 해제 플래그 전달
             } else {
-                onYearChange(year); // 새로 추가
+                // 새로 추가
+                if (selectedYears.length < 15) {
+                    onYearChange(year);
+                } else {
+                    showAlert();
+                }
             }
         }
         setLastSelectedYear(year);
         setPreviousYear(year);
+    };
+
+    const showAlert = () => {
+        setNotificationMessage('15개 이상을 선택하실 수 없습니다!');
+        setShowNotification(true);
     };
 
     const handleYearHashtagClick = (year) => {
@@ -90,6 +107,9 @@ const SelectBox = ({ selectedYears = [], onYearChange, onScrollToYear }) => {
                     </span>
                 ))}
             </div>
+            {showNotification && (
+                <Notification message={notificationMessage} onClose={() => setShowNotification(false)} />
+            )}
         </div>
     );
 };

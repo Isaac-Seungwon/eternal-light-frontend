@@ -1,23 +1,25 @@
 /* Calendar.css */
 .calendar-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
     margin: 0px 0px 20px 0px;
 }
 
-.calendar-container > span {
-    font-size: 16px;
+.calendar-title {
+    font-size: 24px;
     font-weight: bold;
-    color: #333;
-    margin: 10px 0px 10px 0px;
+    color: #3A3A3A;
+    margin: 20px 4px 20px 0px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .calendar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); */
-    gap: 4px;
+    gap: 10px;
 }
 
 .calendar-wrapper {
@@ -25,19 +27,19 @@
     justify-content: center;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1450px) {
     .calendar {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1150px) {
     .calendar {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 950px) {
     .calendar {
         grid-template-columns: repeat(1, 1fr);
     }

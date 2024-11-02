@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import SearchBar from './SearchBar';
 import userImage from '../assets/image/user.png';
-import { FaHome, FaStar, FaCalendarAlt, FaCog, FaRegCalendarAlt, FaBell, FaQuestionCircle, FaSearch, FaHistory, FaCalendarCheck, FaComment } from 'react-icons/fa';
+import { FaHome, FaStar, FaCalendarAlt, FaRegCalendarAlt, FaSearch, FaHistory } from 'react-icons/fa';
 
 const Header = ({ title }) => (
     <header className="app-header">

@@ -48,7 +48,7 @@ const Calendar = ({ year, onDayClick }) => {
     return (
         <div className="calendar-container">
             {/* 캘린더의 연도 제목 표시 */}
-            <span>- {year} -</span>
+            <h2 className="calendar-title">{year}</h2>
             <div className="calendar">
                 {/* 각 월의 Month 컴포넌트를 순회하여 생성 */}
                 {months.map((month, index) => (

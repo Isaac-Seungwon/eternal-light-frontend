@@ -1,25 +1,32 @@
 .select-box {
+    display: inline-block;
     position: relative;
-    max-width: 15.625rem;
+    max-width: 16rem;
+    width: 14rem;
+    margin: 1rem 0rem 1rem 0rem;
 }
 
 .select-box-selected {
     padding: 0.625rem; /* 10px */
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     border: 1px solid #ccc;
-    border-radius: 0.125rem; /* 2px */
-    width: 7.5rem; /* 120px */
+    border-radius: 1rem; /* 2px */
+    width: 7rem; /* 120px */
     cursor: pointer;
 }
 
 .select-box-dropdown {
     position: absolute;
     background-color: #ffffff;
+    opacity: 0.95;
+    top: 0rem;
+    left: 9rem;
+    border-radius: 1rem;
     border: 1px solid #ccc;
-    max-height: 12.5rem; /* 200px */
+    max-height: 14em;
     overflow-y: scroll;
     z-index: 10;
-    width: 8.75rem; /* 140px */
+    width: 6rem;
     scrollbar-width: none;
 }
 

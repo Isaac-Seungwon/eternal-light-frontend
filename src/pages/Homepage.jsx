@@ -1,3 +1,4 @@
+// Homepage.jsx
 import React, { useState, useRef } from 'react';
 import Calendar from '../components/Calendar';
 import SelectBox from '../components/SelectBox';
@@ -5,7 +6,6 @@ import EventList from '../components/EventList';
 import UserProfile from '../components/UserProfile';
 import { useTransition, animated } from '@react-spring/web';
 import './HomePage.css';
-import userImage from '../assets/image/user.png'; 
 
 const HomePage = () => {
     const [years, setYears] = useState([new Date().getFullYear()]); // 선택된 연도들 저장
@@ -91,9 +91,6 @@ const HomePage = () => {
                 />
             </div>
             <div className="section-2">
-                {/* 홈페이지 타이틀 */}
-                <span className="HomePage-title">Calendar Name</span>
-                
                 {/* 연도별 Calendar 컴포넌트 렌더링 */}
                 {transitions((style, year, _, index) => (
                     <animated.div style={style} key={year}>
