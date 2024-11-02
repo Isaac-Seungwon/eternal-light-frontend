@@ -1,9 +1,10 @@
 // Month.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import Daybox from './Daybox';
 import './Month.css';
 
 const Month = ({ month, days, filledDates, onToggleDate, monthIndex, year }) => {
+    const [isHovered, setIsHovered] = useState(false); // Hover 상태를 관리
     const weeks = []; // 각 주를 저장하는 배열
     const dates = Array.from({ length: days }, (_, i) => (i + 1)); // 해당 월의 날짜 목록을 생성
 
@@ -21,10 +22,27 @@ const Month = ({ month, days, filledDates, onToggleDate, monthIndex, year }) => 
         weeks.push(allDays.slice(i, i + 7)); // 한 주(7일)를 추출하여 weeks 배열에 추가
     }
 
+    // 월 클릭 핸들러
+    const handleMonthClick = () => {
+        // 해당 월의 모든 날짜를 토글
+        dates.forEach((date) => {
+            onToggleDate(monthIndex, date);
+        });
+    };
+
     return (
-        <div className="month">
-            {/* 월 이름을 표시하는 부분 */}
-            <span>{month}</span>
+        <div
+            className={`month ${isHovered ? 'hovered' : ''}`} // Hover 상태에 따른 클래스 추가
+            onMouseEnter={() => setIsHovered(true)} // 마우스가 올라갈 때 hover 상태 변경
+            onMouseLeave={() => setIsHovered(false)} // 마우스가 떠날 때 hover 상태 변경
+        >
+            {/* 월 이름을 클릭 가능하게 만들어 클릭 시 핸들러 호출 */}
+            <span 
+                className="month-name" // 클래스 추가
+                onClick={handleMonthClick} // 월 이름 클릭 시 핸들러 호출
+            >
+                {month}
+            </span>
             <div className="month-calendar">
                 {weeks.map((week, weekIndex) => (
                     <div className="week" key={weekIndex}>

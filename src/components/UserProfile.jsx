@@ -21,6 +21,8 @@ const UserProfile = ({ imageSrc, name, description, age, birthDate, location, ba
                         <FaMapMarkerAlt /> {location}
                     </p>
                 </div>
+                {/* 구분선 추가 */}
+                <hr className="profile-divider" />
                 <h3 className="achievement-title">Archivement</h3>
                 <div className="user-badges">
                     {badges.map((badge, index) => (

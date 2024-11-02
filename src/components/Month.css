@@ -5,9 +5,17 @@
     align-items: center;
 }
 
-.month span {
+.month-name {
     color: #333;
     margin-bottom: 0.625rem; /* 10px */
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 1px 4px 1px 4px;
+    transition: background-color 0.3s ease;
+}
+
+.month-name:hover {
+    background-color: #f0f0f0;
 }
 
 .week {
