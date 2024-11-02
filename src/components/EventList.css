@@ -2,15 +2,16 @@
 .event-list {
     position: relative;
     padding: 10px;
+    margin-left: 25px;
     border: 1px solid #ddd;
     border-radius: 8px;
     max-width: 15.625rem;
-    max-height: 35rem;
+    max-height: 31.5rem;
     overflow-x: hidden;
 }
 
 .event-list:not(:first-child) {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .event-list-title {
@@ -102,4 +103,33 @@
 .event-list span {
     display: block;
     min-width: 15.625rem;
+}
+
+@media (max-width: 1400px) {
+    .event-list {
+        max-height: 43rem;
+    }
+}
+
+@media (max-width: 1170px) {
+    .event-list {
+        max-height: 65.5rem;
+    }
+}
+
+@media (max-width: 980px) {
+    .event-list {
+        max-height: 133.5rem;
+    }
+}
+
+@media (max-width: 790px) {
+    .event-list {
+        max-height: 31.5rem;
+    }
+
+    .event-list:not(:first-child) {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
 }

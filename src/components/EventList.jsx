@@ -29,10 +29,9 @@ const EventList = ({ events }) => {
 
     return (
         <div className="event-list">
-            <span className="event-list-title">Selected Dates</span>
             {Object.entries(groupedEvents).map(([year, months]) => (
                 <div key={year}>
-                    <span className="event-year">- {year} -</span>
+                    <span className="event-list-title event-year">Lights of {year}</span>
                     {Object.entries(months).map(([month, events]) => (
                         <div key={month}>
                             <span className="event-month">{monthNames[month - 1]}</span>
@@ -71,7 +70,7 @@ const EventList = ({ events }) => {
                     ))}
                 </div>
             ))}
-            {events.length === 0 && <span>No events selected.</span>}
+            {events.length === 0 && <span>No lights selected.</span>}
         </div>
     );
 };

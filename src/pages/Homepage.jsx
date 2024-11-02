@@ -1,4 +1,3 @@
-// Homepage.jsx
 import React, { useState, useRef } from 'react';
 import Calendar from '../components/Calendar';
 import SelectBox from '../components/SelectBox';
@@ -89,20 +88,16 @@ const HomePage = () => {
                 />
             </div>
             <div className="section-2">
-                {/* 연도별 Calendar 컴포넌트 렌더링 */}
-                {transitions((style, year, _, index) => (
-                    <animated.div style={style} key={year}>
-                        {index > 0 && <div className="divider" />} {/* 각 연도 사이에 구분선 추가 */}
+                {/* 연도별 Calendar와 EventList 쌍으로 렌더링 */}
+                {transitions((style, year) => (
+                    <animated.div style={style} key={year} className="year-container">
                         <div ref={(el) => (calendarRefs.current[year] = el)}> {/* 특정 연도에 대한 참조 저장 */}
-                            <Calendar year={year} onDayClick={handleDayboxClick} /> {/* 달력 컴포넌트 */}
+                            <Calendar year={year} onDayClick={handleDayboxClick} /> {/* 캘린더 컴포넌트 */}
+                            {/* 마지막 연도가 아닐 때만 구분선 렌더링 */}
+                            {year !== years[years.length - 1] && <div className="calendar-divider"></div>}
                         </div>
+                        <EventList year={year} events={getEventsForYear(year)} /> {/* 해당 연도의 이벤트 리스트 */}
                     </animated.div>
-                ))}
-            </div>
-            <div className="section-3">
-                {/* 연도별 이벤트 목록 렌더링 */}
-                {years.map((year) => (
-                    <EventList key={year} year={year} events={getEventsForYear(year)} />
                 ))}
             </div>
         </div>

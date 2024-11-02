@@ -1,9 +1,9 @@
 /* Calendar.css */
 .calendar-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* 수평 방향으로 정렬 */
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 0px 0px 20px 0px;
 }
 
@@ -22,24 +22,19 @@
     gap: 10px;
 }
 
-.calendar-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-@media (max-width: 1450px) {
+@media (max-width: 1400px) {
     .calendar {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1170px) {
     .calendar {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 980px) {
     .calendar {
         grid-template-columns: repeat(1, 1fr);
     }
