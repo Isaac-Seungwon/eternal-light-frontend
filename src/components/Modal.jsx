@@ -1,65 +1,125 @@
 // Modal.jsx
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import ReactDOM from 'react-dom';
 import './Modal.css';
 
-const Modal = ({ children, onClose }) => {
-    const [isMinimized, setIsMinimized] = useState(false); // 모달 최소화 상태 관리
-    const [position, setPosition] = useState({ x: 0, y: 0 }); // 모달 위치 상태 관리
-    const modalRef = useRef(null); // 모달 DOM 참조
-    const offset = useRef({ x: 0, y: 0 }); // 드래그 시 마우스 위치와 모달의 위치 차이 저장
+const Modal = ({ onClose, event }) => {
+    const [isEditing, setIsEditing] = useState(false);
+    const [editableEvent, setEditableEvent] = useState(event);
+    const [isDragging, setIsDragging] = useState(false);
+    const [modalPosition, setModalPosition] = useState({ x: 100, y: 100 });
+    const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
-    // 최소화 상태를 토글하는 함수
-    const toggleMinimize = () => setIsMinimized(!isMinimized);
+    useEffect(() => {
+        setEditableEvent(event); // 이벤트가 변경될 때 editableEvent도 업데이트
+    }, [event]);
 
-    // 드래그 시작 시 호출되는 함수
-    const handleMouseDown = (e) => {
-        // 마우스와 모달의 위치 차이를 기록
-        offset.current = {
-            x: e.clientX - position.x,
-            y: e.clientY - position.y
-        };
-        // 드래그 이벤트 등록
-        document.addEventListener('mousemove', handleMouseMove);
-        document.addEventListener('mouseup', handleMouseUp);
-    };
-
-    // 드래그 중에 모달 위치를 업데이트하는 함수
-    const handleMouseMove = (e) => {
-        // 모달의 새로운 위치를 계산하여 설정
-        setPosition({
-            x: e.clientX - offset.current.x,
-            y: e.clientY - offset.current.y
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setEditableEvent({
+            ...editableEvent,
+            [name]: value
         });
     };
 
-    // 드래그 종료 시 이벤트 해제
-    const handleMouseUp = () => {
-        document.removeEventListener('mousemove', handleMouseMove);
-        document.removeEventListener('mouseup', handleMouseUp);
+    const handleEdit = () => setIsEditing(true);
+    const handleSave = () => {
+        // Save logic here (optional)
+        setIsEditing(false);
     };
 
-    return (
+    const handleMouseDown = (e) => {
+        e.stopPropagation();
+        setIsDragging(true);
+        setDragStart({
+            x: e.clientX - modalPosition.x,
+            y: e.clientY - modalPosition.y
+        });
+        document.body.style.userSelect = 'none';
+    };
+
+    const handleMouseMove = useCallback((e) => {
+        if (isDragging) {
+            setModalPosition({
+                x: e.clientX - dragStart.x,
+                y: e.clientY - dragStart.y
+            });
+        }
+    }, [isDragging, dragStart]);
+
+    const handleMouseUp = useCallback(() => {
+        setIsDragging(false);
+        document.body.style.userSelect = '';
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('mouseup', handleMouseUp);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('mouseup', handleMouseUp);
+        };
+    }, [handleMouseMove, handleMouseUp]);
+
+    const modalContent = (
         <div className="modal-overlay">
-            {/* 모달 컨테이너 */}
             <div
-                className={`modal ${isMinimized ? 'minimized' : ''}`}
-                ref={modalRef}
-                style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
+                className="modal"
+                style={{ transform: `translate(${modalPosition.x}px, ${modalPosition.y}px)` }}
             >
-                {/* 모달 헤더, 드래그 및 버튼 포함 */}
                 <div className="modal-header" onMouseDown={handleMouseDown}>
-                    <button className="modal-minimize" onClick={toggleMinimize}>
-                        {isMinimized ? '□' : '_'} {/* 최소화/복구 버튼 */}
-                    </button>
-                    <button className="modal-close" onClick={onClose}>
-                        × {/* 닫기 버튼 */}
-                    </button>
+                    <button className="modal-close" onClick={onClose}>×</button>
                 </div>
-                {/* 최소화 상태가 아닐 경우에만 자식 콘텐츠 표시 */}
-                {!isMinimized && <div className="modal-content">{children}</div>}
+                <div className="modal-content">
+                    {isEditing ? (
+                        <>
+                            <input
+                                name="title"
+                                value={editableEvent.title}
+                                onChange={handleInputChange}
+                                className="modal-input"
+                                placeholder="Event Title"
+                            />
+                            <input
+                                name="date"
+                                value={editableEvent.date}
+                                onChange={handleInputChange}
+                                className="modal-input"
+                                placeholder="Event Date"
+                            />
+                            <input
+                                name="image"
+                                value={editableEvent.image}
+                                onChange={handleInputChange}
+                                className="modal-input"
+                                placeholder="Image URL"
+                            />
+                            <textarea
+                                name="description"
+                                value={editableEvent.description}
+                                onChange={handleInputChange}
+                                className="modal-textarea"
+                                placeholder="Description"
+                            />
+                            <button className="modal-save" onClick={handleSave}>Save</button>
+                        </>
+                    ) : (
+                        <>
+                            <h2>{editableEvent.title}</h2>
+                            <p>{editableEvent.date}</p>
+                            {editableEvent.image && <img src={editableEvent.image} alt="Event" className="event-image" />}
+                            <p>{editableEvent.description}</p>
+                            <button className="modal-edit" onClick={handleEdit}>Edit</button>
+                        </>
+                    )}
+                    <button className="modal-delete" onClick={onClose}>Delete</button>
+                </div>
             </div>
         </div>
     );
+
+    return ReactDOM.createPortal(modalContent, document.body);
 };
 
 export default Modal;

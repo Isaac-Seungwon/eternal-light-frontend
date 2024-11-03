@@ -9,8 +9,8 @@ const Daybox = ({ filled, onClick, isToday }) => {
             className={`day-box ${filled ? 'filled' : ''}`}
             onClick={onClick}
             style={{
-                backgroundColor: isToday ? '#ffeb3b' : '#e0e0e0',
-                boxShadow: isToday ? 'rgb(255 228 0 / 90%) 0px 0px 5px' : 'none',
+                // backgroundColor: isToday ? '#ffeb3b' : '#e0e0e0',
+                // boxShadow: isToday ? '0 0 15px rgba(255, 223, 186, 0.6)' : 'none',
             }}
             transition={{ duration: 1.5, ease: 'easeInOut' }}
         ></motion.div>
