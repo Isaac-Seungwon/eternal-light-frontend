@@ -1,6 +1,43 @@
 /* App.css */
 .App {
+  position: relative;
   text-align: center;
+  height: 100%;
+}
+
+.background-image {
+  position: absolute; /* 절대 위치로 설정 */
+  width: 100%; /* 전체 너비 */
+  height: 100%; /* 전체 높이 */
+  background-size: cover; /* 배경 이미지 크기 조정 */
+  z-index: -1; /* 다른 요소 뒤에 위치하도록 설정 */
+  transition: background-image 0.5s ease; /* 이미지 전환 애니메이션 */
+}
+
+/* 배경 이미지 클래스 */
+.background-0 {
+  background-image: url('/src/assets/image/background/background_1.png');
+}
+.background-1 {
+  background-image: url('/src/assets/image/background/background_2.png');
+}
+.background-2 {
+  background-image: url('/src/assets/image/background/background_3.png');
+}
+.background-3 {
+  background-image: url('/src/assets/image/background/background_4.png');
+}
+.background-4 {
+  background-image: url('/src/assets/image/background/background_5.png');
+}
+.background-5 {
+  background-image: url('/src/assets/image/background/background_6.png');
+}
+.background-6 {
+  background-image: url('/src/assets/image/background/background_7.png');
+}
+.background-7 {
+  background-image: url('/src/assets/image/background/background_8.png');
 }
 
 .App-logo {

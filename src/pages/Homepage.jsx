@@ -72,6 +72,11 @@ const HomePage = () => {
 
     return (
         <div className="HomePage">
+            {/* Background Floating Circles */}
+            <div className="floating-circle"></div>
+            <div className="floating-circle"></div>
+            <div className="floating-circle"></div>
+
             <div className="section-1">
                 <UserProfile 
                     imageSrc={require('../assets/image/user.png')} 

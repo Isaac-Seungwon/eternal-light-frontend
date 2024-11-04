@@ -9,7 +9,7 @@
 
 .select-box-selected {
     padding: 0.625rem; /* 10px */
-    /* background-color: #f0f0f0; */
+    background-color: #dadada2e;
     border: 1px solid #ccc;
     border-radius: 1rem; /* 2px */
     width: 7rem; /* 120px */
@@ -18,7 +18,7 @@
 
 .select-box-dropdown {
     position: absolute;
-    background-color: #ffffff;
+    background-color: #dadada2e;
     opacity: 0.95;
     top: 0rem;
     left: 9rem;
@@ -52,6 +52,7 @@
 
 .year-hashtag {
     background-color: #e0e0e0;
+    background-color: #dadada2e;
     border-radius: 0.9375rem; /* 15px */
     padding: 0.3125rem 0.625rem; /* 5px 10px */
     margin-right: 0.3125rem; /* 5px */
