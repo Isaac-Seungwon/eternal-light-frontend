@@ -31,17 +31,21 @@
     scrollbar-width: none;
 }
 
+.select-box-options {
+    background-color: #708ac33d;
+}
+
 .select-box-option {
     padding: 0.5rem 0.625rem; /* 8px 10px */
     cursor: pointer;
 }
 
 .select-box-option.selected {
-    background-color: #e0e0e0;
+    background-color: #dadada3d;
 }
 
 .select-box-option:hover {
-    background-color: #f0f0f0;
+    background-color: #dadada3d;
 }
 
 .selected-years {
@@ -51,8 +55,7 @@
 }
 
 .year-hashtag {
-    background-color: #e0e0e0;
-    background-color: #dadada2e;
+    background-color: #dadada3d;
     border-radius: 0.9375rem; /* 15px */
     padding: 0.3125rem 0.625rem; /* 5px 10px */
     margin-right: 0.3125rem; /* 5px */

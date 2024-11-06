@@ -1,7 +1,7 @@
 /* index.css */
 @font-face {
     font-family: 'Pretendard-Regular';
-    src: url('assets/font/Pretendard-Regular.otf') format('opentype'); /* 절대 경로 설정 */
+    src: url('assets/font/Pretendard-Regular.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
