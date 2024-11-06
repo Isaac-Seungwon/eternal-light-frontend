@@ -1,6 +1,6 @@
-// Notification.jsx
+// NotificationMessage.jsx
 import React, { useEffect, useState } from 'react';
-import './Notification.css';
+import './NotificationMessage.css';
 
 const Notification = ({ message, onClose }) => {
 	const [isVisible, setIsVisible] = useState(false);

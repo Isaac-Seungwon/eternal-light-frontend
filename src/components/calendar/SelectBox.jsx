@@ -1,7 +1,7 @@
 // SelectBox.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import './SelectBox.css';
-import Notification from './Notification';
+import Notification from '../notice/NotificationMessage';
 
 const SelectBox = ({ selectedYears = [], onYearChange, onScrollToYear }) => {
 	const [isOpen, setIsOpen] = useState(false); // 드롭다운 열림 상태

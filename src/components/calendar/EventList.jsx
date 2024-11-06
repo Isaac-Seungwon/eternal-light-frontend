@@ -1,8 +1,8 @@
 // EventList.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Modal from '../notice/Modal';
 import './EventList.css';
-import Modal from './Modal';
 
 const monthNames = [
 	'January',

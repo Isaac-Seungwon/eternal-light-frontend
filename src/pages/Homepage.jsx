@@ -1,9 +1,9 @@
 // HomePage.jsx
 import React, { useState, useRef } from 'react';
-import Calendar from '../components/Calendar';
-import SelectBox from '../components/SelectBox';
-import EventList from '../components/EventList';
-import UserProfile from '../components/UserProfile';
+import Calendar from '../components/calendar/Calendar';
+import SelectBox from '../components/calendar/SelectBox';
+import EventList from '../components/calendar/EventList';
+import UserProfile from '../components/user/UserProfile';
 import { useTransition, animated } from '@react-spring/web';
 import './HomePage.css';
 

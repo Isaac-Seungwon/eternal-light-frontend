@@ -4,7 +4,7 @@
 	flex-direction: row;
 	overflow: hidden;
 	max-width: 87.5rem /* 1400px */;
-	min-height: 46rem;
+	min-height: 50rem;
 	margin: 0 auto;
 }
 
