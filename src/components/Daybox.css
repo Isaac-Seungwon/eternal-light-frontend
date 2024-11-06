@@ -1,23 +1,23 @@
 /* Daybox.css */
 .day-box {
-    width: 20px;
-    height: 20px;
-    background-color: #f0f0f0f1;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 2.5px solid transparent;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-    transition: border-color 0.3s ease;
+	width: 20px;
+	height: 20px;
+	background-color: #f0f0f0f1;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 2.5px solid transparent;
+	box-sizing: border-box;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+	transition: border-color 0.3s ease;
 }
 
 .day-box.filled {
-    /* border-color:#7679c7; */
-    border-color:#ffc300
+	/* border-color:#7679c7; */
+	border-color: #ffc300;
 }
 
 .empty-day-box {
-    width: 20px;
-    height: 20px;
-    visibility: hidden;
+	width: 20px;
+	height: 20px;
+	visibility: hidden;
 }

@@ -1,76 +1,76 @@
 /* UserProfile.css */
 .user-profile {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.5rem; /* 8px */
-    max-width: 15.625rem; /* 250px */
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.5rem; /* 8px */
+	max-width: 15.625rem; /* 250px */
 }
 
 .user-profile-image {
-    width: 12.5rem; /* 200px */
-    height: 12.5rem; /* 200px */
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: white;
-    border: 1px solid #ddd;
+	width: 12.5rem; /* 200px */
+	height: 12.5rem; /* 200px */
+	border-radius: 50%;
+	object-fit: cover;
+	background-color: white;
+	border: 1px solid #ddd;
 }
 
 .user-profile-info {
-    text-align: left;
+	text-align: left;
 }
 
 .user-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.3125rem; /* 5px */
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 0.3125rem; /* 5px */
 }
 
 .user-description {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 0.625rem; /* 10px */
+	font-size: 0.9rem;
+	color: #555;
+	margin-bottom: 0.625rem; /* 10px */
 }
 
 .user-details {
-    font-size: 0.85rem;
-    color: #333;
-    margin-bottom: 0.625rem; /* 10px */
+	font-size: 0.85rem;
+	color: #333;
+	margin-bottom: 0.625rem; /* 10px */
 }
 
 .user-detail {
-    display: flex;
-    align-items: center;
-    gap: 0.3125rem; /* 5px */
-    margin-bottom: 0.3125rem; /* 5px */
+	display: flex;
+	align-items: center;
+	gap: 0.3125rem; /* 5px */
+	margin-bottom: 0.3125rem; /* 5px */
 }
 
 .achievement-title {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #333;
-    margin-top: 0.625rem; /* 10px */
-    text-align: left;
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: #333;
+	margin-top: 0.625rem; /* 10px */
+	text-align: left;
 }
 
 .user-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3125rem; /* 5px */
-    margin-top: 0.3125rem; /* 5px */
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.3125rem; /* 5px */
+	margin-top: 0.3125rem; /* 5px */
 }
 
 .user-badge {
-    background-color: #4CAF50;
-    color: white;
-    padding: 0.1875rem 0.5rem; /* 3px 8px */
-    border-radius: 0.25rem; /* 4px */
-    font-size: 0.75rem;
+	background-color: #4caf50;
+	color: white;
+	padding: 0.1875rem 0.5rem; /* 3px 8px */
+	border-radius: 0.25rem; /* 4px */
+	font-size: 0.75rem;
 }
 
 .profile-divider {
-    margin: 1rem 0;
-    border: 0;
-    border-top: 1px solid #ccc;
+	margin: 1rem 0;
+	border: 0;
+	border-top: 1px solid #ccc;
 }

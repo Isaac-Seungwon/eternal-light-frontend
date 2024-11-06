@@ -1,142 +1,148 @@
 /* EventList.css */
 .event-list {
-    position: relative;
-    padding: 10px;
-    margin-left: 25px;
-    background-color: #dadada3d; /* #dadada2e */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    max-width: 15.625rem;
-    max-height: 31.5rem;
-    overflow-x: hidden;
+	position: relative;
+	padding: 10px;
+	margin-left: 25px;
+	background-color: #dadada3d; /* #dadada2e */
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	max-width: 15.625rem;
+	max-height: 31.5rem;
+	overflow-x: hidden;
 }
 
 .event-list:not(:first-child) {
-    margin-top: 40px;
+	margin-top: 40px;
 }
 
 .event-list-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
 }
 
 .event-year {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #333;
-    font-weight: bold;
+	margin-top: 10px;
+	font-size: 16px;
+	color: #333;
+	font-weight: bold;
 }
 
 .event-month {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 16px;
-    color: #333;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 16px;
+	color: #333;
 }
 
 .event-item {
-    margin-bottom: 4px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    text-align: left;
-    transition: background-color 0.3s ease;
+	margin-bottom: 4px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	text-align: left;
+	transition: background-color 0.3s ease;
 }
 
 .event-item.active {
-    background-color: rgb(220 240 255 / 22%); /* rgba(220, 240, 255, 0.5) */
+	background-color: rgb(220 240 255 / 22%); /* rgba(220, 240, 255, 0.5) */
 }
 
 .event-summary {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 
 .event-image img {
-    max-height: 60px;
-    border-radius: 4px;
-    margin-right: 10px;
+	max-height: 60px;
+	border-radius: 4px;
+	margin-right: 10px;
 }
 
 .event-info {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .event-title {
-    margin: 0;
-    font-size: 14px;
-    font-weight: bold;
+	margin: 0;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .event-description {
-    margin: 4px 0;
-    font-size: 14px;
-    color: #666;
+	margin: 4px 0;
+	font-size: 14px;
+	color: #666;
 }
 
 .event-date {
-    margin: 4px 0;
-    font-size: 10px;
-    color: #666;
+	margin: 4px 0;
+	font-size: 10px;
+	color: #666;
 }
 
 .event-details {
-    padding: 10px 4px 10px 4px;
-    margin-top: 4px;
-    font-size: 12px;
-    color: #444;
-    border-top: 1px solid #eaeaea;
-    border-bottom: 1px solid #eaeaea;
-    animation: slide-down 0.3s ease-out;
+	padding: 10px 4px 10px 4px;
+	margin-top: 4px;
+	font-size: 12px;
+	color: #444;
+	border-top: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+	animation: slide-down 0.3s ease-out;
 }
 
 .event-details-content {
-    margin: 2px 0;
+	margin: 2px 0;
 }
 
 @keyframes slide-down {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .event-item:last-child {
-    margin-bottom: 0px;
+	margin-bottom: 0px;
 }
 
 .event-list span {
-    display: block;
-    min-width: 15.625rem;
+	display: block;
+	min-width: 15.625rem;
 }
 
 @media (max-width: 1400px) {
-    .event-list {
-        max-height: 43rem;
-    }
+	.event-list {
+		max-height: 43rem;
+	}
 }
 
 @media (max-width: 1170px) {
-    .event-list {
-        max-height: 65.5rem;
-    }
+	.event-list {
+		max-height: 65.5rem;
+	}
 }
 
 @media (max-width: 980px) {
-    .event-list {
-        max-height: 133.5rem;
-    }
+	.event-list {
+		max-height: 133.5rem;
+	}
 }
 
 @media (max-width: 790px) {
-    .event-list {
-        max-height: 31.5rem;
-    }
+	.event-list {
+		max-height: 31.5rem;
+	}
 
-    .event-list:not(:first-child) {
-        margin-top: 0px;
-        margin-bottom: 20px;
-    }
+	.event-list:not(:first-child) {
+		margin-top: 0px;
+		margin-bottom: 20px;
+	}
 }

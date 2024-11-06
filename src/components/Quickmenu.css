@@ -1,75 +1,101 @@
 /* QuickMenu.css */
 .quick-menu {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    cursor: grab;
-    z-index: 1000;
-    transition: transform 0.1s ease;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	cursor: grab;
+	z-index: 1000;
+	transition: transform 0.1s ease;
 }
 
 .circle-button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #4caf50;
+	color: white;
+	font-size: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition:
+		background-color 0.3s ease,
+		transform 0.3s ease;
 }
 
 .circle-button:hover {
-    background-color: #45A049;
-    transform: scale(1.1);
+	background-color: #45a049;
+	transform: scale(1.1);
 }
 
 .menu-items {
-    display: flex;
-    flex-direction: row;
-    margin-left: 10px;
-    animation: menu-slide-in 0.4s ease forwards;
-    opacity: 0;
+	display: flex;
+	flex-direction: row;
+	margin-left: 10px;
+	animation: menu-slide-in 0.4s ease forwards;
+	opacity: 0;
 }
 
 .menu-item {
-    background-color: #333;
-    color: white;
-    border-radius: 8px;
-    padding: 10px;
-    margin-right: 10px;
-    font-size: 14px;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    opacity: 0;
-    transform: translateX(-20px);
-    transform: translateY(-20px);
+	background-color: #333;
+	color: white;
+	border-radius: 8px;
+	padding: 10px;
+	margin-right: 10px;
+	font-size: 14px;
+	transition:
+		transform 0.4s ease,
+		opacity 0.4s ease;
+	opacity: 0;
+	transform: translateX(-20px);
+	transform: translateY(-20px);
 }
 
-.menu-item:nth-child(1) { animation-delay: 0.1s; }
-.menu-item:nth-child(2) { animation-delay: 0.2s; }
-.menu-item:nth-child(3) { animation-delay: 0.3s; }
+.menu-item:nth-child(1) {
+	animation-delay: 0.1s;
+}
+.menu-item:nth-child(2) {
+	animation-delay: 0.2s;
+}
+.menu-item:nth-child(3) {
+	animation-delay: 0.3s;
+}
 
 /* 메뉴 항목이 등장할 때 애니메이션 */
 .quick-menu.open .menu-items .menu-item {
-    opacity: 1;
-    transform: translateX(0);
+	opacity: 1;
+	transform: translateX(0);
 }
 
 /* 드래그가 매끄럽게 작동하도록 */
 @keyframes menu-slide-in {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
+	from {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 @keyframes menu-slide-out {
-    from { opacity: 1; transform: translateX(0); }
-    to { opacity: 0; transform: translateX(-20px); }
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
 }
 
 @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }

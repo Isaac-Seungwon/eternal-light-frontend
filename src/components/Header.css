@@ -1,101 +1,101 @@
 /* Header.css */
 .app-header {
-    background-color: #f2f2f2;
-    /* background-image: url('../assets/image/wood_texture.png'); */
-    background-repeat: repeat;
-    background-size: auto;
-    background-position: center;
-    background-attachment: fixed;
-    background-position: center;
-    border-bottom: 1px solid #cacaca;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    position: relative;
+	background-color: #f2f2f2;
+	/* background-image: url('../assets/image/wood_texture.png'); */
+	background-repeat: repeat;
+	background-size: auto;
+	background-position: center;
+	background-attachment: fixed;
+	background-position: center;
+	border-bottom: 1px solid #cacaca;
+	margin-bottom: 20px;
+	padding: 10px 20px;
+	position: relative;
 }
 
 .app-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.0);
-    pointer-events: none;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0);
+	pointer-events: none;
 }
 
 .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
-    margin: 4px 4px 4px 4px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 10px;
+	margin: 4px 4px 4px 4px;
 }
 
 .header-left {
-    display: flex;
-    align-items: center;
-    text-align: left;
+	display: flex;
+	align-items: center;
+	text-align: left;
 }
 
 .logo-icon {
-    font-size: 24px;
-    margin-right: 8px;
+	font-size: 24px;
+	margin-right: 8px;
 }
 
 .app-title {
-    font-size: 24px;
-    font-weight: bold;
-    min-width: 10rem;
-    margin: 0;
+	font-size: 24px;
+	font-weight: bold;
+	min-width: 10rem;
+	margin: 0;
 }
 
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-align: right;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	text-align: right;
 }
 
 .user-settings {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 50%;
-    padding: 5px;
-    cursor: pointer;
+	display: flex;
+	align-items: center;
+	background-color: white;
+	border-radius: 50%;
+	padding: 5px;
+	cursor: pointer;
 }
 
 .user-image {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
 }
 
 .menu {
-    text-align: center;
+	text-align: center;
 }
 
 .menu ul {
-    list-style: none;
-    display: flex;
-    justify-content: left;
-    margin: 0;
-    padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: left;
+	margin: 0;
+	padding: 0;
 }
 
 .menu li {
-    margin: 4px 14px 4px 0px;
+	margin: 4px 14px 4px 0px;
 }
 
 .menu a {
-    text-decoration: none;
-    color: rgb(45, 45, 45);
-    padding: 6px 8px 6px 8px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+	text-decoration: none;
+	color: rgb(45, 45, 45);
+	padding: 6px 8px 6px 8px;
+	border-radius: 4px;
+	transition: background-color 0.3s;
 }
 
 .menu a:hover {
-    background-color: rgba(58, 58, 58, 0.1);
+	background-color: rgba(58, 58, 58, 0.1);
 }

@@ -1,86 +1,86 @@
 /* App.css */
 .App {
-  position: relative;
-  text-align: center;
-  height: 100%;
+	position: relative;
+	text-align: center;
+	height: 100%;
 }
 
 .background-image {
-  position: absolute; /* 절대 위치로 설정 */
-  width: 100%; /* 전체 너비 */
-  height: 100%; /* 전체 높이 */
-  background-size: cover; /* 배경 이미지 크기 조정 */
-  z-index: -1; /* 다른 요소 뒤에 위치하도록 설정 */
-  transition: background-image 0.5s ease; /* 이미지 전환 애니메이션 */
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	z-index: -1;
+	transition: background-image 0.5s ease;
 }
 
 /* 배경 이미지 클래스 */
 .background-0 {
-  background-image: url('/src/assets/image/background/background_1.png');
+	background-image: url('/src/assets/image/background/background_1.png');
 }
 .background-1 {
-  background-image: url('/src/assets/image/background/background_2.png');
+	background-image: url('/src/assets/image/background/background_2.png');
 }
 .background-2 {
-  background-image: url('/src/assets/image/background/background_3.png');
+	background-image: url('/src/assets/image/background/background_3.png');
 }
 .background-3 {
-  background-image: url('/src/assets/image/background/background_4.png');
+	background-image: url('/src/assets/image/background/background_4.png');
 }
 .background-4 {
-  background-image: url('/src/assets/image/background/background_5.png');
+	background-image: url('/src/assets/image/background/background_5.png');
 }
 .background-5 {
-  background-image: url('/src/assets/image/background/background_6.png');
+	background-image: url('/src/assets/image/background/background_6.png');
 }
 .background-6 {
-  background-image: url('/src/assets/image/background/background_7.png');
+	background-image: url('/src/assets/image/background/background_7.png');
 }
 .background-7 {
-  background-image: url('/src/assets/image/background/background_8.png');
+	background-image: url('/src/assets/image/background/background_8.png');
 }
 
 .App-logo {
-  height: 39vmin;
-  pointer-events: none;
+	height: 39vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .toggle-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 1000;
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	padding: 10px 15px;
+	font-size: 16px;
+	cursor: pointer;
+	z-index: 1000;
 }
