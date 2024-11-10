@@ -55,7 +55,7 @@ const EventList = ({ events }) => {
 								const key = `${event.date}-${event.title}`; // 키 생성
 								return (
 									<motion.div
-										key={event.id} // ID로 고유성 보장
+										key={key} // Unique key for each event
 										className={`event-item ${activeEvents.includes(key) ? 'active' : ''}`} // 클릭한 이벤트에 대한 클래스 추가
 										onClick={() => toggleModal(event)} // 이벤트 클릭 시 모달 열기
 										initial={{
@@ -84,17 +84,13 @@ const EventList = ({ events }) => {
 			))}
 			{events.length === 0 && <span>No lights selected.</span>}
 
-			{activeEvents.map(
-				(
-					key // activeKey가 있을 때만 모달 표시
-				) => (
-					<Modal
-						key={key} // 고유 키로 모달 설정
-						onClose={() => setActiveEvents(activeEvents.filter((activeKey) => activeKey !== key))} // 모달 닫기 핸들러
-						event={events.find((event) => `${event.date}-${event.title}` === key)} // activeKey에 해당하는 이벤트 전달
-					/>
-				)
-			)}
+			{activeEvents.map((key) => (
+				<Modal
+					key={key} // Unique key for each modal
+					onClose={() => setActiveEvents(activeEvents.filter((activeKey) => activeKey !== key))} // 모달 닫기 핸들러
+					event={events.find((event) => `${event.date}-${event.title}` === key)} // activeKey에 해당하는 이벤트 전달
+				/>
+			))}
 		</div>
 	);
 };

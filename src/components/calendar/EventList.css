@@ -3,12 +3,29 @@
 	position: relative;
 	padding: 10px;
 	margin-left: 25px;
-	background-color: #dadada3d; /* #dadada2e */
+	background-color: #dadada3d;
 	border: 1px solid #ddd;
 	border-radius: 8px;
-	max-width: 15.625rem;
-	max-height: 31.5rem;
+	max-width: 17.5rem;
+	max-height: 33rem;
+	overflow-y: scroll;
 	overflow-x: hidden;
+	scrollbar-width: thin;
+	scrollbar-color: #b3b3b3 #f1f1f1;
+}
+
+.event-list::-webkit-scrollbar {
+	width: 8px;
+}
+
+.event-list::-webkit-scrollbar-thumb {
+	background-color: #b3b3b3;
+	border-radius: 10px;
+}
+
+.event-list::-webkit-scrollbar-track {
+	background-color: #f1f1f1;
+	border-radius: 10px;
 }
 
 .event-list:not(:first-child) {
@@ -43,10 +60,11 @@
 	cursor: pointer;
 	text-align: left;
 	transition: background-color 0.3s ease;
+	border-radius: 6px;
 }
 
 .event-item.active {
-	background-color: rgb(220 240 255 / 22%); /* rgba(220, 240, 255, 0.5) */
+	background-color: rgba(220, 240, 255, 0.3);
 }
 
 .event-summary {
@@ -85,7 +103,7 @@
 }
 
 .event-details {
-	padding: 10px 4px 10px 4px;
+	padding: 10px 4px;
 	margin-top: 4px;
 	font-size: 12px;
 	color: #444;
@@ -110,7 +128,7 @@
 }
 
 .event-item:last-child {
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 
 .event-list span {
@@ -126,13 +144,13 @@
 
 @media (max-width: 1170px) {
 	.event-list {
-		max-height: 65.5rem;
+		max-height: 67.5rem;
 	}
 }
 
 @media (max-width: 980px) {
 	.event-list {
-		max-height: 133.5rem;
+		max-height: 136.5rem;
 	}
 }
 
@@ -142,7 +160,7 @@
 	}
 
 	.event-list:not(:first-child) {
-		margin-top: 0px;
+		margin-top: 0;
 		margin-bottom: 20px;
 	}
 }
