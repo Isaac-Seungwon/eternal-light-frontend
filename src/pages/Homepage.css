@@ -1,5 +1,5 @@
-/* HomePage.css */
-.HomePage {
+/* Homepage.css */
+.Homepage {
 	display: flex;
 	flex-direction: row;
 	overflow: hidden;
@@ -45,7 +45,7 @@
 }
 
 @media (max-width: 790px) {
-	.HomePage {
+	.Homepage {
 		flex-direction: column;
 	}
 

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/navigation/Header';
-import HomePage from './pages/HomePage';
+import Homepage from './pages/Homepage';
 import UserSettingsPage from './pages/UserSettingsPage';
 import './App.css';
 
@@ -24,8 +24,8 @@ const App = () => {
 
 	const updateBackgroundPosition = () => {
 		const headerHeight = -800;
-		const homePageHeight = document.querySelector('.HomePage')?.offsetHeight || 0;
-		const totalHeight = headerHeight + homePageHeight;
+		const HomepageHeight = document.querySelector('.Homepage')?.offsetHeight || 0;
+		const totalHeight = headerHeight + HomepageHeight;
 
 		const newTop = totalHeight > 0 ? `${totalHeight}px` : '0px';
 		setBackgroundTop(newTop);
@@ -63,7 +63,7 @@ const App = () => {
 		const intervalId = setInterval(setBackgroundImageAndColor, 1000 * 60 * 5);
 
 		const observer = new MutationObserver(updateBackgroundPosition);
-		const targetNode = document.querySelector('.HomePage');
+		const targetNode = document.querySelector('.Homepage');
 
 		if (targetNode) {
 			observer.observe(targetNode, { childList: true, subtree: true });
@@ -85,7 +85,7 @@ const App = () => {
 			<div className={`background-image background-${currentImageIndex}`} style={{ top: backgroundTop }} />
 			<Header title='Daily Life' />
 			<Routes>
-				<Route path='/' element={<HomePage />} />
+				<Route path='/' element={<Homepage />} />
 				<Route path='/settings' element={<UserSettingsPage />} />
 			</Routes>
 		</div>

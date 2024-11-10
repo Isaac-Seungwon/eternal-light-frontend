@@ -1,13 +1,13 @@
-// HomePage.jsx
+// Homepage.jsx
 import React, { useState, useRef } from 'react';
 import Calendar from '../components/calendar/Calendar';
 import SelectBox from '../components/calendar/SelectBox';
 import EventList from '../components/calendar/EventList';
 import UserProfile from '../components/user/UserProfile';
 import { useTransition, animated } from '@react-spring/web';
-import './HomePage.css';
+import './Homepage.css';
 
-const HomePage = () => {
+const Homepage = () => {
 	const [years, setYears] = useState([new Date().getFullYear()]); // 선택된 연도들 저장
 	const [events, setEvents] = useState([]); // 이벤트 목록 상태
 	const [selectedDates, setSelectedDates] = useState([]); // 여러 날짜를 선택할 수 있도록 날짜 배열
@@ -71,7 +71,7 @@ const HomePage = () => {
 	};
 
 	return (
-		<div className='HomePage'>
+		<div className='Homepage'>
 			{/* Background Floating Circles */}
 			<div className='floating-circle'></div>
 			<div className='floating-circle'></div>
@@ -112,4 +112,4 @@ const HomePage = () => {
 	);
 };
 
-export default HomePage;
+export default Homepage;
