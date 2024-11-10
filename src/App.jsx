@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/navigation/Header';
@@ -22,15 +21,14 @@ const App = () => {
 	const [backgroundTop, setBackgroundTop] = useState('0px');
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+	// 배경 위치 계산
 	const updateBackgroundPosition = () => {
-		const headerHeight = -800;
-		const HomepageHeight = document.querySelector('.Homepage')?.offsetHeight || 0;
-		const totalHeight = headerHeight + HomepageHeight;
-
-		const newTop = totalHeight > 0 ? `${totalHeight}px` : '0px';
+		const pageHeight = document.body.scrollHeight;
+		const newTop = pageHeight > window.innerHeight ? `${pageHeight - window.innerHeight}px` : '0px';
 		setBackgroundTop(newTop);
 	};
 
+	// 시간에 맞는 배경 이미지 및 색상 설정
 	const setBackgroundImageAndColor = () => {
 		const currentHour = new Date().getHours();
 		let index = 0;
@@ -59,18 +57,21 @@ const App = () => {
 
 	useEffect(() => {
 		setBackgroundImageAndColor();
+		updateBackgroundPosition(); // 페이지 로드 시 배경 위치 계산
 
-		const intervalId = setInterval(setBackgroundImageAndColor, 1000 * 60 * 5);
+		const intervalId = setInterval(setBackgroundImageAndColor, 1000 * 60 * 5); // 5분마다 배경 변경
 
+		// Homepage 요소 변경을 감지하는 옵저버 설정
 		const observer = new MutationObserver(updateBackgroundPosition);
 		const targetNode = document.querySelector('.Homepage');
-
 		if (targetNode) {
 			observer.observe(targetNode, { childList: true, subtree: true });
 		}
 
+		// 리사이즈 이벤트에 대한 처리
 		window.addEventListener('resize', updateBackgroundPosition);
 
+		// 컴포넌트 언마운트 시 클린업
 		return () => {
 			clearInterval(intervalId);
 			if (targetNode) {
@@ -78,7 +79,7 @@ const App = () => {
 			}
 			window.removeEventListener('resize', updateBackgroundPosition);
 		};
-	}, []);
+	}, []); // 빈 배열을 넣어 컴포넌트 마운트 시 한 번만 실행
 
 	return (
 		<div className='App'>
