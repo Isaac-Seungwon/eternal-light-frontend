@@ -1,8 +1,11 @@
+// App.jsx
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/navigation/Header';
 import Homepage from './pages/Homepage';
 import UserSettingsPage from './pages/UserSettingsPage';
+import { useAtom } from 'jotai';
+import { themeAtom } from './atoms/themeAtom';
 import './App.css';
 
 // 배경색 배열 정의 (시간대에 따른 배경색)
@@ -18,6 +21,7 @@ const backgroundColors = [
 ];
 
 const App = () => {
+	const [currentTheme, setCurrentTheme] = useAtom(themeAtom);
 	const [backgroundTop, setBackgroundTop] = useState('0px');
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -28,38 +32,46 @@ const App = () => {
 		setBackgroundTop(newTop);
 	};
 
-	// 시간에 맞는 배경 이미지 및 색상 설정
-	const setBackgroundImageAndColor = () => {
-		const currentHour = new Date().getHours();
-		let index = 0;
-
-		if (currentHour >= 0 && currentHour < 3) {
-			index = 0;
-		} else if (currentHour >= 3 && currentHour < 6) {
-			index = 1;
-		} else if (currentHour >= 6 && currentHour < 9) {
-			index = 2;
-		} else if (currentHour >= 9 && currentHour < 12) {
-			index = 3;
-		} else if (currentHour >= 12 && currentHour < 15) {
-			index = 4;
-		} else if (currentHour >= 15 && currentHour < 18) {
-			index = 5;
-		} else if (currentHour >= 18 && currentHour < 21) {
-			index = 6;
-		} else if (currentHour >= 21 && currentHour < 24) {
-			index = 7;
-		}
-
-		setCurrentImageIndex(index);
-		document.body.style.backgroundColor = backgroundColors[index];
-	};
-
 	useEffect(() => {
+		// 시간에 맞는 배경 이미지 및 색상, 테마 설정
+		const setBackgroundImageAndColor = () => {
+			const currentHour = new Date().getHours();
+			let index = 0;
+
+			if (currentHour >= 0 && currentHour < 3) {
+				index = 0;
+				setCurrentTheme('light');
+			} else if (currentHour >= 3 && currentHour < 6) {
+				index = 1;
+				setCurrentTheme('light');
+			} else if (currentHour >= 6 && currentHour < 9) {
+				index = 2;
+				setCurrentTheme('light');
+			} else if (currentHour >= 9 && currentHour < 12) {
+				index = 3;
+				setCurrentTheme('light');
+			} else if (currentHour >= 12 && currentHour < 15) {
+				index = 4;
+				setCurrentTheme('light');
+			} else if (currentHour >= 15 && currentHour < 18) {
+				index = 5;
+				setCurrentTheme('dark');
+			} else if (currentHour >= 18 && currentHour < 21) {
+				index = 6;
+				setCurrentTheme('dark');
+			} else if (currentHour >= 21 && currentHour < 24) {
+				index = 7;
+				setCurrentTheme('dark');
+			}
+
+			setCurrentImageIndex(index);
+			document.body.style.backgroundColor = backgroundColors[index];
+		};
+
 		setBackgroundImageAndColor();
 		updateBackgroundPosition(); // 페이지 로드 시 배경 위치 계산
 
-		const intervalId = setInterval(setBackgroundImageAndColor, 1000 * 60 * 5); // 5분마다 배경 변경
+		const intervalId = setInterval(setBackgroundImageAndColor, 1000 * 60 * 1); // 1분마다 배경 변경
 
 		// Homepage 요소 변경을 감지하는 옵저버 설정
 		const observer = new MutationObserver(updateBackgroundPosition);
@@ -79,10 +91,10 @@ const App = () => {
 			}
 			window.removeEventListener('resize', updateBackgroundPosition);
 		};
-	}, []); // 빈 배열을 넣어 컴포넌트 마운트 시 한 번만 실행
+	}, [setCurrentImageIndex, setCurrentTheme]); // 의존성 배열
 
 	return (
-		<div className='App'>
+		<div className={`App ${currentTheme}`}>
 			<div className={`background-image background-${currentImageIndex}`} style={{ top: backgroundTop }} />
 			<Header title='Daily Life' />
 			<Routes>

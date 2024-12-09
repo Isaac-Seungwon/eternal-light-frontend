@@ -10,10 +10,20 @@
 .calendar-title {
 	font-size: 24px;
 	font-weight: bold;
-	color: #3a3a3a;
+	/* color: #3a3a3a; */
 	margin: 20px 4px 20px 0px;
 	text-align: center;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme */
+.calendar-title.dark {
+	color: #fff;
+}
+
+/* Light theme */
+.calendar-title.light {
+	color: #3a3a3a;
 }
 
 .calendar {

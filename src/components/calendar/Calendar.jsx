@@ -1,10 +1,13 @@
 // Calendar.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import Month from './Month';
+import { useAtom } from 'jotai';
+import { themeAtom } from '../../atoms/themeAtom';
 import './Calendar.css';
 
 const Calendar = ({ year, onDayClick, onTitleHeightChange }) => {
 	const [filledDates, setFilledDates] = useState({}); // 날짜의 채워짐 상태 관리
+	const [currentTheme] = useAtom(themeAtom); // 테마 값
 	const titleRef = useRef(null); // 제목 요소 참조
 
 	const months = [
@@ -55,7 +58,7 @@ const Calendar = ({ year, onDayClick, onTitleHeightChange }) => {
 	return (
 		<div className='calendar-container'>
 			{/* 캘린더의 연도 제목 표시 */}
-			<h2 className='calendar-title' ref={titleRef}>
+			<h2 className={`calendar-title ${currentTheme}`} ref={titleRef}>
 				{year}
 			</h2>
 			<div className='calendar'>
