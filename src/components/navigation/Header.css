@@ -1,13 +1,15 @@
 /* Header.css */
 .app-header {
-	background-color: #f2f2f2;
+	/* background-color: #f2f2f2; */
+	/* background-color: #f2f2f226; */
+	background-color: #f2f2f200;
 	/* background-image: url('../assets/image/wood_texture.png'); */
 	background-repeat: repeat;
 	background-size: auto;
 	background-position: center;
 	background-attachment: fixed;
 	background-position: center;
-	border-bottom: 1px solid #cacaca;
+	/* border-bottom: 1px solid #cacaca; */
 	margin-bottom: 20px;
 	padding: 10px 20px;
 	position: relative;

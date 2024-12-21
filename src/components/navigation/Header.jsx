@@ -11,7 +11,7 @@ const Header = ({ title }) => {
 
 	return (
 		<header className='app-header'>
-			<div className='header-top'>
+			{/* <div className='header-top'>
 				<div className='header-left'>
 					<FaRegCalendarAlt className='logo-icon' />
 					<h1 className='app-title'>{title}</h1>
@@ -22,9 +22,9 @@ const Header = ({ title }) => {
 						<img src={userImage} alt='User' className='user-image' />
 					</div>
 				</div>
-			</div>
+			</div> */}
 
-			<nav className='menu'>
+			{/* <nav className='menu'>
 				<ul>
 					<li>
 						<a href='#home'>
@@ -52,7 +52,7 @@ const Header = ({ title }) => {
 						</a>
 					</li>
 				</ul>
-			</nav>
+			</nav> */}
 		</header>
 	);
 };
